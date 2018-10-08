@@ -18,6 +18,7 @@ class CreateOdpTable extends Migration
             $table->string('unique', 10)->unique();
             $table->string('name', 50);
             $table->string('frame', 50);
+            $table->string('power', 50)->default('-');
             $table->integer('odpspec_id');
             $table->integer('odcs_id');
             $table->integer('distribution_id');
