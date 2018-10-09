@@ -20,7 +20,7 @@ class CreateOdpTable extends Migration
             $table->string('frame', 50);
             $table->string('power', 50)->default('-');
             $table->integer('odpspec_id');
-            $table->integer('odcs_id');
+            $table->integer('odc_id');
             $table->integer('distribution_id');
             $table->integer('panel');
             $table->enum('port', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);

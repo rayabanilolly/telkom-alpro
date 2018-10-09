@@ -17,6 +17,7 @@ class CreateStoTable extends Migration
             $table->increments('id');
             $table->string('unique', 10)->unique();
             $table->string('name', 50);
+            $table->string('shortname', 50);
             $table->integer('witel_id');
             $table->enum('deleted', ['0', '1'])->default('0');
             $table->timestamps();

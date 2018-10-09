@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class witel_seeder extends Seeder
+class statusproj_seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,16 +11,15 @@ class witel_seeder extends Seeder
      */
     public function run()
     {
-        $witels = ['BALIKPAPAN', 'KALBAR', 'KALSEL', 'KALTARA', 'KALTENG', 'SAMARINDA'];
+        $names = ['BOOKING', 'PEMBANGUNAN', 'SETOR ABD', 'REDRAW ABD', 'INTEGRASI', 'CONNECTIVITY', 'CLOSE', 'KENDALA EKSISTING', 'KENDALA POWER', 'CANCEL'];
 
-        foreach($witels as $witel):
-        	DB::table('witel')->insert([
+        foreach($names as $name):
+        	DB::table('statusproj')->insert([
         		'unique' => substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10),
-	        	'name' => $witel,
-	        	'regional_id' => 6,
+	        	'name' => $name,
 	        	'created_at' => date('Y-m-d H:i:s'),
 	        	'updated_at' => date('Y-m-d H:i:s'),
         	]);
-	    endforeach;
+        endforeach;
     }
 }

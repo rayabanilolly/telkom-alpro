@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class witel_seeder extends Seeder
+class typeproj_seeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,16 +11,15 @@ class witel_seeder extends Seeder
      */
     public function run()
     {
-        $witels = ['BALIKPAPAN', 'KALBAR', 'KALSEL', 'KALTARA', 'KALTENG', 'SAMARINDA'];
+        $types = ['OSP FTTH', 'UNSC', 'LME HEM', 'GRANULAR', 'MIGRASI', 'VALIDASI', 'TEKNIS', 'FO EKSISTING', 'DISCOVERY', 'ALU'];
 
-        foreach($witels as $witel):
-        	DB::table('witel')->insert([
+        foreach($types as $type):
+        	DB::table('typeproj')->insert([
         		'unique' => substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 10),
-	        	'name' => $witel,
-	        	'regional_id' => 6,
+	        	'name' => $type,
 	        	'created_at' => date('Y-m-d H:i:s'),
 	        	'updated_at' => date('Y-m-d H:i:s'),
         	]);
-	    endforeach;
+        endforeach;
     }
 }

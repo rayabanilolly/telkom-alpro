@@ -15,7 +15,15 @@ class DatabaseSeeder extends Seeder
         	[
         		regional_seeder::class,
         		witel_seeder::class,
-        		sto_seeder::class
+                sto_seeder::class,
+                typeproj_seeder::class,
+                statusproj_seeder::class,
+                statusinv_seeder::class,
+                statuscons_seeder::class,
+                odpspec_seeder::class,
+                odcspec_seeder::class,
+                mitra_seeder::class,
+        		gponmerk_seeder::class
         	]
         );
     }
