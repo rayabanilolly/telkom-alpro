@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('mitra_id');
             $table->enum('level', ['1', '2', '3'])->default('3');
-            $table->enum('active', ['0', '1'])->default('0');
+            $table->enum('active', ['0', '1'])->default('1');
             $table->rememberToken();
             $table->timestamps();
         });

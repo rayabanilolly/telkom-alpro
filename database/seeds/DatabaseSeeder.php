@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
                 odpspec_seeder::class,
                 odcspec_seeder::class,
                 mitra_seeder::class,
-        		gponmerk_seeder::class
+                gponmerk_seeder::class,
+        		user_seeder::class
         	]
         );
     }
