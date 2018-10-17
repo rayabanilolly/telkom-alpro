@@ -10,9 +10,6 @@
 
     <title>{{ config('app.name', 'SISDI') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -20,11 +17,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <img src="{{ asset('img/webapp/logo.png') }}" alt="..." style="max-width: 10%">
+                <img src="{{ asset('img/webapp/logo.png') }}" alt="..." style="max-width: 10%;">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,10 +37,10 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Masuk') }}</a>
-                            </li>
+                                <a class="btn btn-primary btn-sm" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> {{ __('Masuk') }}</a>
+                            </li> &nbsp
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Daftar') }}</a>
+                                <a class="btn btn-dark btn-sm" href="{{ route('register') }}"><i class="fas fa-users"></i> {{ __('Daftar') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
@@ -55,7 +52,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Keluar') }}
+                                        <i class="fas fa-sign-out-alt"></i> {{ __('Keluar') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -69,9 +66,12 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="height: 520px; background-image: url('{{ asset('img/webapp/slide32.jpg')  }}'); background-repeat: no-repeat; background-size: 1300px 520px">
             @yield('content')
         </main>
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

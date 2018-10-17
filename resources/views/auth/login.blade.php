@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center" style="padding-top: 20px">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Sistem Inventori Alat Produksi (Alpro)') }}</div>
 
@@ -15,7 +15,7 @@
                             <label for="nik" class="col-sm-4 col-form-label text-md-right">{{ __('NIK') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nik" type="text" class="form-control{{ $errors->has('nik') ? ' is-invalid' : '' }}" name="nik" value="{{ old('nik') }}" required autofocus>
+                                <input id="nik" type="text" class="form-control{{ $errors->has('nik') ? ' is-invalid' : '' }} form-control-sm" name="nik" value="{{ old('nik') }}" required autofocus>
 
                                 @if ($errors->has('nik'))
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Sandi') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -53,7 +53,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-sm">
                                     {{ __('Masuk') }}
                                 </button>
 
