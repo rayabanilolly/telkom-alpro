@@ -16,10 +16,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .row-navbar {
+            margin-right: -78px !important;
+            margin-left: -78px !important;
+        }
+        .popover {
+            max-width: 100% !important;       
+        }
+    </style>
 </head>
 <body">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-laravel">
             <div class="container">
                 <img src="{{ asset('img/webapp/logo.png') }}" alt="..." style="max-width: 10%;">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -44,12 +53,11 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle btn btn-light btn-sm" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> <i class="fas fa-user"></i>&nbsp {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item btn btn-sm" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         <i class="fas fa-sign-out-alt"></i> {{ __('Keluar') }}
@@ -66,12 +74,110 @@
             </div>
         </nav>
 
-        <main class="py-4" style="height: 520px; background-image: url('{{ asset('img/webapp/slide32.jpg')  }}'); background-repeat: no-repeat; background-size: 1300px 520px">
-            @yield('content')
+        @guest
+        <main class="py-4" style="height: 520px; background-image: url('{{ asset('img/webapp/slide32.jpg')  }}'); background-repeat: no-repeat; background-size: 1300px 520px; padding-top: 10px !important">
+        @else
+        <main class="py-4">
+        @endguest
+
+            @guest
+
+                @yield('content')
+
+            @else
+            <div class="container">
+                <div class="row row-navbar justify-content-center">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row" style="text-align: center !important">
+                                    <div class="col-md">
+                                        <a href="">
+                                            <img src="{{ asset('img/webapp/halaman_utama.png') }}">
+                                        </a>
+                                        <br>Halaman Utama
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="#" id="projek" class="pop" data-container="body" data-toggle="popover" data-placement="bottom" data-content="">
+                                            <img src="{{ asset('img/webapp/projek.png') }}">
+                                        </a><br>Projek
+                                        <div id="popover_projek" class="popover" style="display: none;">
+                                            <div class="row" style="text-align: center !important;">
+                                                <div class="col-md">
+                                                    <a href="#">
+                                                        <img src="{{ asset('img/webapp/projek_booking.png') }}">
+                                                    </a><br>Booking
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/projek_progres.png') }}">
+                                                    </a><br>Monitoring
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/projek_reporting.png') }}">
+                                                    </a><br>Laporan
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="">
+                                            <img src="{{ asset('img/webapp/alpro.png') }}">
+                                        </a>
+                                        <br>Alpro
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="">
+                                            <img src="{{ asset('img/webapp/mancore.png') }}">
+                                        </a>
+                                        <br>Mancore
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="">
+                                            <img src="{{ asset('img/webapp/mitra.png') }}">
+                                        </a>
+                                        <br>Mitra
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="">
+                                            <img src="{{ asset('img/webapp/user.png') }}">
+                                        </a>
+                                        <br>Pengguna
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="">
+                                            <img src="{{ asset('img/webapp/master.png') }}">
+                                        </a>
+                                        <br>Master
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+
+                                @yield('content')
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endguest
         </main>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+        $('.pop').popover({
+            // trigger: 'focus',
+            container: 'body',
+            html: true,
+            content: function(){
+                return $('#popover_'+ $(this).attr('id')).html();
+            }
+        });
+    </script>
 </body>
 </html>

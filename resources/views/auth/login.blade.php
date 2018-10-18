@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center" style="padding-top: 20px">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card">
                 <div class="card-header">{{ __('Sistem Inventori Alat Produksi (Alpro)') }}</div>
 
