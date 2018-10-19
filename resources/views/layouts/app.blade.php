@@ -98,7 +98,7 @@
                                         <br>Halaman Utama
                                     </div>
                                     <div class="col-md">
-                                        <a href="#" id="projek" class="pop" data-container="body" data-toggle="popover" data-placement="bottom" data-content="">
+                                        <a href="#" id="projek" class="pop" data-container="body" data-toggle="popover" data-placement="bottom">
                                             <img src="{{ asset('img/webapp/projek.png') }}">
                                         </a><br>Projek
                                         <div id="popover_projek" class="popover" style="display: none;">
@@ -122,10 +122,33 @@
                                         </div>
                                     </div>
                                     <div class="col-md">
-                                        <a href="">
+                                        <a href="#" id="alpro" class="pop" data-container="body" data-toggle="popover" data-placement="bottom">
                                             <img src="{{ asset('img/webapp/alpro.png') }}">
-                                        </a>
-                                        <br>Alpro
+                                        </a><br>Alpro
+                                        <div id="popover_alpro" class="popover" style="display: none;">
+                                            <div class="row" style="text-align: center !important;">
+                                                <div class="col-md">
+                                                    <a href="#">
+                                                        <img src="{{ asset('img/webapp/gpon.png') }}">
+                                                    </a><br>GPON
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/odf.png') }}">
+                                                    </a><br>ODF
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/odc.png') }}">
+                                                    </a><br>ODC
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/odp.png') }}">
+                                                    </a><br>ODP
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md">
                                         <a href="">
@@ -146,10 +169,70 @@
                                         <br>Pengguna
                                     </div>
                                     <div class="col-md">
-                                        <a href="">
+                                        <a href="#" id="master" class="pop" data-container="body" data-toggle="popover" data-placement="bottom">
                                             <img src="{{ asset('img/webapp/master.png') }}">
                                         </a>
                                         <br>Master
+                                        <div id="popover_master" class="popover" style="display: none;">
+                                            <div class="row" style="text-align: center !important;">
+                                                <div class="col-md">
+                                                    <a href="#">
+                                                        <img src="{{ asset('img/webapp/regional.png') }}">
+                                                    </a><br>Regional
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/witel.png') }}">
+                                                    </a><br>Witel
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/sto.png') }}">
+                                                    </a><br>STO
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/status_projek.png') }}">
+                                                    </a><br>Status Projek
+                                                </div>
+                                            </div>
+                                            <div class="row" style="text-align: center !important;">
+                                                <div class="col-md">
+                                                    <a href="#">
+                                                        <img src="{{ asset('img/webapp/status_cons.png') }}">
+                                                    </a><br>Status Cons
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/status_inventori.png') }}">
+                                                    </a><br>Status Inv
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/odc_spek.png') }}">
+                                                    </a><br>ODC Spek
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/odp_spek.png') }}">
+                                                    </a><br>ODP Spek
+                                                </div>
+                                            </div>
+                                            <div class="row" style="text-align: center !important;">
+                                                <div class="col-md">
+                                                    <a href="">
+                                                        <img src="{{ asset('img/webapp/gpon_merk.png') }}">
+                                                    </a><br>GPON Merk
+                                                </div>
+                                                <div class="col-md">
+                                                    <a href="#">
+                                                        <img src="{{ asset('img/webapp/distribusi.png') }}">
+                                                    </a><br>Distribusi
+                                                </div>
+                                                <div class="col-md"></div>
+                                                <div class="col-md"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
