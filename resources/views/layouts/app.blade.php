@@ -92,7 +92,7 @@
                             <div class="card-header">
                                 <div class="row" style="text-align: center !important">
                                     <div class="col-md">
-                                        <a href="">
+                                        <a href="{{ route('home') }}">
                                             <img src="{{ asset('img/webapp/halaman_utama.png') }}">
                                         </a>
                                         <br>Halaman Utama
@@ -104,17 +104,17 @@
                                         <div id="popover_projek" class="popover" style="display: none;">
                                             <div class="row" style="text-align: center !important;">
                                                 <div class="col-md">
-                                                    <a href="#">
+                                                    <a href="{{ route('booking') }}">
                                                         <img src="{{ asset('img/webapp/projek_booking.png') }}">
                                                     </a><br>Booking
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('monitoring') }}">
                                                         <img src="{{ asset('img/webapp/projek_progres.png') }}">
                                                     </a><br>Monitoring
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('laporan') }}">
                                                         <img src="{{ asset('img/webapp/projek_reporting.png') }}">
                                                     </a><br>Laporan
                                                 </div>

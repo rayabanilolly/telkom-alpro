@@ -15,7 +15,23 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ /*Konfigurasi untuk vue-routes*/
+// import router from './routes.js';
+
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+ /*Konfigurasi untuk vue-routes*/
+
+// konfigurasi axios default url
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://sisdi.local/api';
+// konfigurasi axios default url
+
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('beranda-component', require('./components/BerandaComponent.vue'));
+Vue.component('projek-component', require('./components/ProjekComponent.vue'));
 
 const app = new Vue({
     el: '#app'
