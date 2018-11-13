@@ -30,8 +30,15 @@ axios.defaults.baseURL = 'http://sisdi.local/api';
 // konfigurasi axios default url
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
 Vue.component('beranda-component', require('./components/BerandaComponent.vue'));
+
 Vue.component('projek-component', require('./components/ProjekComponent.vue'));
+
+Vue.component('gpon-component', require('./components/GponComponent.vue'));
+Vue.component('odf-component', require('./components/OdfComponent.vue'));
+Vue.component('odc-component', require('./components/OdcComponent.vue'));
+Vue.component('odp-component', require('./components/OdpComponent.vue'));
 
 const app = new Vue({
     el: '#app'

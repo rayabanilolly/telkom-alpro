@@ -29,3 +29,12 @@ Route::get('/bookingcontentmitra', 'BookingContent@mitra');
 Route::get('/bookingcontenttypeproj', 'BookingContent@typeproj');
 Route::get('/bookingcontentodc/{sto_id}', 'BookingContent@odc');
 Route::get('/bookingcontentodcspec', 'BookingContent@odcspec');
+Route::get('/bookingcontentdistribution/{odc_id}', 'BookingContent@distribution');
+
+Route::get('/alprogponcontentregional', 'BookingContent@regional');
+Route::get('/alprogponcontentwitel/{regional_id}', 'BookingContent@witel');
+Route::get('/alprogponcontentsto/{witel_id}', 'BookingContent@sto');
+Route::get('/alprogponcontentgponmerk', 'GponContent@gponmerk');
+Route::get('/alprogponcontentmitra', 'BookingContent@mitra');
+Route::get('/alprogponcontentstatuscons', 'GponContent@statuscons');
+Route::get('/alprogponcontentstatusinv', 'GponContent@statusinv');

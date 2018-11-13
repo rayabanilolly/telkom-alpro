@@ -44,4 +44,24 @@ class HomeController extends Controller
     {
         return view('prolaporan');
     }
+
+    public function gpon()
+    {
+        return view('alprogpon');
+    }
+
+    public function odf()
+    {
+        return view('alproodf');
+    }
+
+    public function odc()
+    {
+        return view('alproodc');
+    }
+
+    public function odp()
+    {
+        return view('alproodp');
+    }
 }

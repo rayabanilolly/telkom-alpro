@@ -150,10 +150,10 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="odc" name="odc" v-model="odc">
+											<select class="form-control form-control-sm" id="odc" name="odc" v-model="odc" v-on:change="allDistribution()">
 												<option :value="0">Pilih ODC</option>
-												<option value="add">Tambah ODC Baru</option>
 												<option :value="odc.id" v-for="odc in odcs">{{ odc.name }}</option>
+												<option value="add">Tambah ODC Baru</option>
 											</select>
 										</div>
 									</div>
@@ -190,39 +190,37 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md-3">
-											<label for="tipe_projek">Distribusi</label>
+											<label for="distribution">Distribusi</label>
 										</div>
 										<div class="col-md-1" style="text-align: center;">
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+											<select class="form-control form-control-sm" id="distribution" name="distribution" v-model="distribution">
+												<option :value="0">Pilih Distribusi</option>
+												<option :value="distribution.id" v-for="distribution in distributions">{{ distribution.name }}</option>
+												<option value="add">Tambah Distribusi Baru</option>
 											</select>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group" v-if="distribution === 'add'">
 									<div class="row">
 										<div class="col-md-3">
-											<label for="nomor_kontrak">Nama Distribusi Baru</label>
+											<label for="distribution_baru">Nama Distribusi Baru</label>
 										</div>
 										<div class="col-md-1" style="text-align: center;">
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control form-control-sm" placeholder="Nomor kontrak">
+											<input type="text" class="form-control form-control-sm" placeholder="Nama Distribusi Baru">
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group" v-if="distribution === 'add'">
 									<div class="row">
 										<div class="col-md-3">
-											<label for="tipe_projek">Kapasitas Distribusi Baru</label>
+											<label for="capacityofdistribustion">Kapasitas Distribusi Baru</label>
 										</div>
 										<div class="col-md-1" style="text-align: center;">
 											<label> : </label>
@@ -312,6 +310,7 @@ import axios from 'axios';
 				odc: '',
 				specofodc: [],
 				distributions: [],
+				distribution: '',
 				capacityofdistribustion: []
 			}
 		},
@@ -387,6 +386,17 @@ import axios from 'axios';
 				.then(
 					response => {
 						this.specofodc = response.data.data
+					}
+				)
+				.catch(
+					(error) => console.log(error.message)
+				);
+			},
+			allDistribution() {
+				axios.get('/bookingcontentdistribution/'+ this.odc)
+				.then(
+					response => {
+						this.distributions = response.data.data
 					}
 				)
 				.catch(

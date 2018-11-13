@@ -17,12 +17,12 @@ class CreateGponTable extends Migration
             $table->increments('id');
             $table->string('unique', 10)->unique();
             $table->string('name', 50);
+            $table->string('address', 20);
             $table->integer('gponmerk_id');
             $table->integer('regional_id');
             $table->integer('witel_id');
             $table->integer('sto_id');
             $table->integer('mitra_id');
-            $table->integer('project_id');
             $table->integer('statuscons_id');
             $table->integer('statusinv_id');
             $table->string('lat', 10);

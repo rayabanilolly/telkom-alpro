@@ -22,7 +22,6 @@ class CreateOdfTable extends Migration
             $table->integer('witel_id');
             $table->integer('sto_id');
             $table->integer('mitra_id');
-            $table->integer('project_id');
             $table->integer('statuscons_id');
             $table->integer('statusinv_id');
             $table->string('lat', 10);

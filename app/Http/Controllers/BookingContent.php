@@ -63,8 +63,10 @@ class BookingContent extends Controller
     	return response()->json(['data' => $data], 200);
     }
 
-    public function distribution()
+    public function distribution($odc_id)
     {
+    	$data = distribution::where('odc_id', $odc_id)->get();
 
+    	return response()->json(['data' => $data], 200);
     }
 }

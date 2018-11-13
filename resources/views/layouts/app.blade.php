@@ -128,22 +128,22 @@
                                         <div id="popover_alpro" class="popover" style="display: none;">
                                             <div class="row" style="text-align: center !important;">
                                                 <div class="col-md">
-                                                    <a href="#">
+                                                    <a href="{{ route('gpon') }}">
                                                         <img src="{{ asset('img/webapp/gpon.png') }}">
                                                     </a><br>GPON
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('odf') }}">
                                                         <img src="{{ asset('img/webapp/odf.png') }}">
                                                     </a><br>ODF
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('odc') }}">
                                                         <img src="{{ asset('img/webapp/odc.png') }}">
                                                     </a><br>ODC
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('odp') }}">
                                                         <img src="{{ asset('img/webapp/odp.png') }}">
                                                     </a><br>ODP
                                                 </div>

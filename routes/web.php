@@ -1,6 +1,7 @@
 <?php
 
 use App\mitra;
+use App\gpon;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/booking', 'HomeController@booking')->name('booking');
 Route::get('/monitoring', 'HomeController@monitoring')->name('monitoring');
 Route::get('/laporan', 'HomeController@laporan')->name('laporan');
 
+Route::get('/gpon', 'HomeController@gpon')->name('gpon');
+Route::get('/odf', 'HomeController@odf')->name('odf');
+Route::get('/odc', 'HomeController@odc')->name('odc');
+Route::get('/odp', 'HomeController@odp')->name('odp');
+
 Route::get('/test', function(){
-	$mitra = mitra::all()->toArray();
+	$gpon = gpon::all()->toArray();
 
 	echo '<pre>';
-	print_r(json_encode($mitra));
+	print_r(json_encode($gpon));
 	echo '</pre>';
 });
