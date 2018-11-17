@@ -2,6 +2,7 @@
 
 use App\mitra;
 use App\gpon;
+use App\gponmerk;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,20 @@ Route::get('/odc', 'HomeController@odc')->name('odc');
 Route::get('/odp', 'HomeController@odp')->name('odp');
 
 Route::get('/test', function(){
-	$gpon = gpon::all()->toArray();
+	// $gpon = gpon::find(1)->gponmerk->name;
+	// $gpon = gpon::find(1);
+	$gpon = gpon::all();
+	$merk = array(); $i = 0;
+	foreach($gpon as $index):
+		$merk[] = gponmerk::find($index->gponmerk_id)->toArray();
+		$gpon[$i]->merk = $merk[$i];
+		$i++;
+	endforeach;
+
+	// $gpon[0]->merk = $merk[0];
 
 	echo '<pre>';
+	// print_r($gpon[0]->merk->name);
 	print_r(json_encode($gpon));
 	echo '</pre>';
 });

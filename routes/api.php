@@ -38,3 +38,7 @@ Route::get('/alprogponcontentgponmerk', 'GponContent@gponmerk');
 Route::get('/alprogponcontentmitra', 'BookingContent@mitra');
 Route::get('/alprogponcontentstatuscons', 'GponContent@statuscons');
 Route::get('/alprogponcontentstatusinv', 'GponContent@statusinv');
+Route::post('/alprogponcontentgpon', 'GponContent@gpon');
+Route::post('/alprogponcontentgponadd', 'GponContent@gponadd');
+Route::get('/alprogponcontentgponshow/{gpon_id}', 'GponContent@gponshow');
+Route::put('/alprogponcontentgponedit/{gpon_id}', 'GponContent@gponedit');

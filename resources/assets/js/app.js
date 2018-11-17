@@ -29,6 +29,25 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://sisdi.local/api';
 // konfigurasi axios default url
 
+// import vue-tables-2
+const TableSchema = {
+	skin: 'table table-responsive table-striped table-bordered table-hover table-sm',
+	perPageValues: [10, 25, 50, 100, 250, 500, 1000],
+	pagination: {
+		edge: true
+	},
+	text: {
+		firts: '<<',
+		last: '>>'
+	}
+};
+
+import {ServerTable, ClientTable, Event} from 'vue-tables-2'
+
+Vue.use(ServerTable, TableSchema, false, 'bootstrap4')
+Vue.use(ClientTable, TableSchema, false, 'bootstrap4')
+// import vue-tables-2
+
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 Vue.component('beranda-component', require('./components/BerandaComponent.vue'));

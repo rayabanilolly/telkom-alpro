@@ -10,6 +10,6 @@ class gponmerk extends Model
 
     public function gpon()
     {
-    	return $this->belongsTo('App\gpon');
+    	return $this->hashMany('App\gpon');
     }
 }

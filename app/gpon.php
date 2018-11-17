@@ -8,8 +8,8 @@ class gpon extends Model
 {
     protected $table = 'gpon';
 
-    public function gponmerks()
+    public function gponmerk()
     {
-    	return $this->hasMany('App\gponmerk');
+    	return $this->belongsTo('App\gponmerk');
     }
 }
