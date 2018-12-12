@@ -558,6 +558,12 @@ module.exports = {
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(48);
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -666,7 +672,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 var g;
@@ -691,12 +697,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(48);
 
 /***/ }),
 /* 5 */
@@ -12004,7 +12004,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(66).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(66).setImmediate))
 
 /***/ }),
 /* 10 */
@@ -15054,7 +15054,7 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4)))
 
 /***/ }),
 /* 16 */
@@ -27769,7 +27769,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 30 */
@@ -28399,7 +28399,7 @@ function foundMatch(query, value, isListFilter) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(44);
-module.exports = __webpack_require__(257);
+module.exports = __webpack_require__(261);
 
 
 /***/ }),
@@ -28409,7 +28409,7 @@ module.exports = __webpack_require__(257);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_tables_2__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_tables_2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_tables_2__);
@@ -28471,8 +28471,8 @@ Vue.component('projek-component', __webpack_require__(248));
 
 Vue.component('gpon-component', __webpack_require__(251));
 Vue.component('odf-component', __webpack_require__(254));
-Vue.component('odc-component', __webpack_require__(255));
-Vue.component('odp-component', __webpack_require__(256));
+Vue.component('odc-component', __webpack_require__(257));
+Vue.component('odp-component', __webpack_require__(260));
 
 var app = new Vue({
   el: '#app'
@@ -28504,7 +28504,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(4);
+window.axios = __webpack_require__(2);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -45654,7 +45654,7 @@ __webpack_require__(65);
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(14)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(14)(module)))
 
 /***/ }),
 /* 47 */
@@ -52516,7 +52516,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 67 */
@@ -52709,7 +52709,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)))
 
 /***/ }),
 /* 68 */
@@ -64294,7 +64294,7 @@ module.exports = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(243)
 /* template */
@@ -64413,7 +64413,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(246)
 /* template */
@@ -64461,7 +64461,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -66107,7 +66107,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(249)
 /* template */
@@ -66155,8 +66155,28 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -66456,6 +66476,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
+			jumlah_odp: '',
+			nama_projek: '',
+			typeproj: '',
+			contract_number: '',
 			mitras: [],
 			mitra: '',
 			types: [],
@@ -66467,10 +66491,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			sto: '',
 			odcs: [],
 			odc: '',
-			specofodc: [],
+			odc_baru: '',
+			specofodcs: [],
+			specofodc: '',
 			distributions: [],
 			distribution: '',
-			capacityofdistribustion: []
+			capacityofdistribution: '',
+			distribution_baru: '',
+			capacityofdistributionforshow: '-',
+			leftovercoreforshow: '-',
+			odprecommendationforshow: '-',
+			countodprecommendation: '',
+			startodplabel: '',
+			datas: [],
+			odctext: [],
+			distributiontext: '',
+			loading: false
 		};
 	},
 
@@ -66533,7 +66569,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this7 = this;
 
 			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/bookingcontentodcspec').then(function (response) {
-				_this7.specofodc = response.data.data;
+				_this7.specofodcs = response.data.data;
 			}).catch(function (error) {
 				return console.log(error.message);
 			});
@@ -66546,6 +66582,101 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			}).catch(function (error) {
 				return console.log(error.message);
 			});
+		},
+		cekJumlahOdp: function cekJumlahOdp() {
+			if (this.jumlah_odp == 'tanpaodp') {
+				this.distribution = '';
+				this.distribution_baru = '';
+				this.capacityofdistribution = '';
+				this.capacityofdistributionforshow = '-';
+				this.leftovercoreforshow = '-';
+				this.odprecommendationforshow = '-';
+			} else if (this.jumlah_odp == 'denganodp') {
+				this.jumlah_odp = '';
+			}
+		},
+		rekomendasiOdp: function rekomendasiOdp() {
+			if (this.odc == 'add') {
+				if (this.distribution == 'add') {
+					this.capacityofdistributionforshow = this.capacityofdistribution;
+					this.leftovercoreforshow = this.capacityofdistribution;
+					this.odprecommendationforshow = this.capacityofdistribution - (this.capacityofdistribution == 12 ? 2 : 4);
+					this.countodprecommendation = this.odprecommendationforshow;
+				}
+				this.startodplabel = 1;
+			}
+		},
+		tampilkanRekomendasiOdp: function tampilkanRekomendasiOdp() {
+			var detail = [];
+			var label, frame, index;
+
+			this.odctext = this.distribution == 'add' ? this.odc_baru.split('-') : this.odc.text;
+			this.distributiontext = this.distribution == 'add' ? this.distribution_baru : this.distribution.text;
+
+			for (var n = 0; n < this.jumlah_odp; n++) {
+				index = '00' + (this.startodplabel + n);
+				index = index.substr(index.length - 3);
+				label = 'ODP-' + this.odctext[1] + '-' + this.odctext[2] + '/' + index;
+				frame = this.odctext[2] + '/' + this.distributiontext + '/' + index + '.01';
+				detail[n] = { number: index, label: label, frame: frame };
+			}
+			this.datas = detail;
+		},
+		saveAndFinish: function saveAndFinish() {
+			var _this9 = this;
+
+			this.loading = true;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/bookingcontentbooking', {
+				regional: this.regional,
+				witel: this.witel,
+				sto: this.sto,
+				nama_projek: this.nama_projek,
+				mitra: this.mitra,
+				tipe_projek: this.typeproj,
+				nomor_kontrak: this.contract_number,
+				odc: this.odc,
+				odc_baru: this.odc_baru,
+				spek_odc_baru: this.specofodc,
+				distribusi: this.distribution,
+				distribusi_baru: this.distribution_baru,
+				kap_distribusi_baru: this.capacityofdistribution,
+				jumlah_odp: this.jumlah_odp,
+				label_odp_awal: this.startodplabel,
+				label_odp: JSON.stringify(this.datas)
+			}).then(function (response) {
+				console.log(response.data.data);
+				alert('Projek baru telah disimpan');
+				_this9.loading = false;
+				_this9.reset();
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+
+			// console.log('>');
+			// console.log('regional : '+ this.regional);
+			// console.log('witel : '+ this.witel);
+			// console.log('sto : '+ this.sto);
+			// console.log('nama_projek : '+ this.nama_projek);
+			// console.log('mitra : '+ this.mitra);
+			// console.log('tipe projek : '+ this.typeproj);
+			// console.log('nomor kontrak : '+ this.contract_number);
+			// console.log('odc : '+ this.odc);
+			// console.log('odc baru : '+ this.odc_baru);
+			// console.log('spek odc baru : '+ this.specofodc);
+			// console.log('distribusi : '+ this.distribution);
+			// console.log('distribusi baru : '+ this.distribution_baru);
+			// console.log('kap distribusi baru : '+ this.capacityofdistribution);
+			// console.log('jumlah odp : '+ this.jumlah_odp);
+			// console.log('label odp : '+  JSON.stringify(this.datas));
+		},
+		reset: function reset() {
+			Object.assign(this.$data, this.$options.data());
+
+			this.allRegional();
+			this.allMitra();
+			this.allTypes();
+			this.allSpecOfOdc();
 		}
 	},
 	mounted: function mounted() {
@@ -66761,13 +66892,48 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(8),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(8),
+                    _vm._v(" "),
+                    _vm._m(9),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.nama_projek,
+                            expression: "nama_projek"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Nama projek",
+                          id: "nama_projek",
+                          name: "nama_projek"
+                        },
+                        domProps: { value: _vm.nama_projek },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.nama_projek = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("div", { staticClass: "row" }, [
-                    _vm._m(9),
-                    _vm._v(" "),
                     _vm._m(10),
+                    _vm._v(" "),
+                    _vm._m(11),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-8" }, [
                       _c(
@@ -66820,16 +66986,39 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("div", { staticClass: "row" }, [
-                    _vm._m(11),
-                    _vm._v(" "),
                     _vm._m(12),
+                    _vm._v(" "),
+                    _vm._m(13),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-8" }, [
                       _c(
                         "select",
                         {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.typeproj,
+                              expression: "typeproj"
+                            }
+                          ],
                           staticClass: "form-control form-control-sm",
-                          attrs: { id: "typeproj", name: "typeproj" }
+                          attrs: { id: "typeproj", name: "typeproj" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.typeproj = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
                         },
                         [
                           _c("option", { domProps: { value: 0 } }, [
@@ -66850,13 +67039,48 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(13),
-                _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("div", { staticClass: "row" }, [
                     _vm._m(14),
                     _vm._v(" "),
                     _vm._m(15),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.contract_number,
+                            expression: "contract_number"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Nomor kontrak",
+                          id: "contract_number",
+                          name: "contract_number"
+                        },
+                        domProps: { value: _vm.contract_number },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.contract_number = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(16),
+                    _vm._v(" "),
+                    _vm._m(17),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-8" }, [
                       _c(
@@ -66901,7 +67125,12 @@ var render = function() {
                           _vm._l(_vm.odcs, function(odc) {
                             return _c(
                               "option",
-                              { domProps: { value: odc.id } },
+                              {
+                                domProps: {
+                                  value: odc.id,
+                                  value: { text: odc.name }
+                                }
+                              },
                               [_vm._v(_vm._s(odc.name))]
                             )
                           }),
@@ -66917,29 +67146,88 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _vm.odc === "add"
-                  ? _c("div", { staticClass: "form-group" }, [_vm._m(16)])
+                  ? _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(18),
+                        _vm._v(" "),
+                        _vm._m(19),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-8" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.odc_baru,
+                                expression: "odc_baru"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Nama ODC Baru",
+                              id: "odc_baru",
+                              name: "odc_baru"
+                            },
+                            domProps: { value: _vm.odc_baru },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.odc_baru = $event.target.value
+                              }
+                            }
+                          })
+                        ])
+                      ])
+                    ])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.odc === "add"
                   ? _c("div", { staticClass: "form-group" }, [
                       _c("div", { staticClass: "row" }, [
-                        _vm._m(17),
+                        _vm._m(20),
                         _vm._v(" "),
-                        _vm._m(18),
+                        _vm._m(21),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-md-8" }, [
                           _c(
                             "select",
                             {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.specofodc,
+                                  expression: "specofodc"
+                                }
+                              ],
                               staticClass: "form-control form-control-sm",
-                              attrs: { id: "specofodc", name: "specofodc" }
+                              attrs: { id: "specofodc", name: "specofodc" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.specofodc = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                }
+                              }
                             },
                             [
                               _c("option", { domProps: { value: 0 } }, [
                                 _vm._v("Pilih Spesifikasi")
                               ]),
                               _vm._v(" "),
-                              _vm._l(_vm.specofodc, function(spec) {
+                              _vm._l(_vm.specofodcs, function(spec) {
                                 return _c(
                                   "option",
                                   { domProps: { value: spec.id } },
@@ -66954,11 +67242,218 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
+                _vm.jumlah_odp != "tanpaodp"
+                  ? _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(22),
+                        _vm._v(" "),
+                        _vm._m(23),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-8" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.distribution,
+                                  expression: "distribution"
+                                }
+                              ],
+                              staticClass: "form-control form-control-sm",
+                              attrs: {
+                                id: "distribution",
+                                name: "distribution"
+                              },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.distribution = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { domProps: { value: 0 } }, [
+                                _vm._v("Pilih Distribusi")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.distributions, function(distribution) {
+                                return _c(
+                                  "option",
+                                  {
+                                    domProps: {
+                                      value: distribution.id,
+                                      value: { text: distribution.name }
+                                    }
+                                  },
+                                  [_vm._v(_vm._s(distribution.name))]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "add" } }, [
+                                _vm._v("Tambah Distribusi Baru")
+                              ])
+                            ],
+                            2
+                          )
+                        ])
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.distribution === "add" && _vm.jumlah_odp != "tanpaodp"
+                  ? _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(24),
+                        _vm._v(" "),
+                        _vm._m(25),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-8" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.distribution_baru,
+                                expression: "distribution_baru"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Nama Distribusi Baru",
+                              id: "distribution_baru",
+                              name: "distribution_baru"
+                            },
+                            domProps: { value: _vm.distribution_baru },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.distribution_baru = $event.target.value
+                              }
+                            }
+                          })
+                        ])
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.distribution === "add" && _vm.jumlah_odp != "tanpaodp"
+                  ? _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(26),
+                        _vm._v(" "),
+                        _vm._m(27),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-8" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.capacityofdistribution,
+                                  expression: "capacityofdistribution"
+                                }
+                              ],
+                              staticClass: "form-control form-control-sm",
+                              attrs: {
+                                id: "capacityofdistribution",
+                                name: "capacityofdistribution"
+                              },
+                              on: {
+                                change: [
+                                  function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.capacityofdistribution = $event.target
+                                      .multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  },
+                                  function($event) {
+                                    _vm.rekomendasiOdp()
+                                  }
+                                ]
+                              }
+                            },
+                            [
+                              _c("option", { attrs: { value: "0" } }, [
+                                _vm._v("Pilih kapasitas")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "12" } }, [
+                                _vm._v("12")
+                              ]),
+                              _vm._v(" "),
+                              _c("option", { attrs: { value: "24" } }, [
+                                _vm._v("24")
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
                 _c("div", { staticClass: "form-group" }, [
                   _c("div", { staticClass: "row" }, [
-                    _vm._m(19),
+                    _vm._m(28),
                     _vm._v(" "),
-                    _vm._m(20),
+                    _vm._m(29),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("i", [
+                        _c("b", [
+                          _vm._v(
+                            "Kapasitas : kabel " +
+                              _vm._s(_vm.capacityofdistributionforshow) +
+                              " "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            " Core sisa : " +
+                              _vm._s(_vm.leftovercoreforshow) +
+                              " core "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            " Rekomendasi jumlah odp : " +
+                              _vm._s(_vm.odprecommendationforshow) +
+                              " ODP"
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(30),
+                    _vm._v(" "),
+                    _vm._m(31),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-8" }, [
                       _c(
@@ -66968,44 +67463,53 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.distribution,
-                              expression: "distribution"
+                              value: _vm.jumlah_odp,
+                              expression: "jumlah_odp"
                             }
                           ],
                           staticClass: "form-control form-control-sm",
-                          attrs: { id: "distribution", name: "distribution" },
+                          attrs: { id: "jumlah_odp", name: "jumlah_odp" },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.distribution = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            }
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.jumlah_odp = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              function($event) {
+                                _vm.cekJumlahOdp()
+                              }
+                            ]
                           }
                         },
                         [
-                          _c("option", { domProps: { value: 0 } }, [
-                            _vm._v("Pilih Distribusi")
-                          ]),
+                          _vm.jumlah_odp === "tanpaodp"
+                            ? _c("option", { attrs: { value: "denganodp" } }, [
+                                _vm._v("Dengan Odp")
+                              ])
+                            : _vm._e(),
                           _vm._v(" "),
-                          _vm._l(_vm.distributions, function(distribution) {
-                            return _c(
-                              "option",
-                              { domProps: { value: distribution.id } },
-                              [_vm._v(_vm._s(distribution.name))]
-                            )
+                          _vm._l(_vm.countodprecommendation, function(n) {
+                            return _vm.jumlah_odp != "tanpaodp"
+                              ? _c("option", { domProps: { value: n } }, [
+                                  _vm._v(_vm._s(n))
+                                ])
+                              : _vm._e()
                           }),
                           _vm._v(" "),
-                          _c("option", { attrs: { value: "add" } }, [
-                            _vm._v("Tambah Distribusi Baru")
-                          ])
+                          _vm.odc === "add"
+                            ? _c("option", { attrs: { value: "tanpaodp" } }, [
+                                _vm._v("Tanpa Odp")
+                              ])
+                            : _vm._e()
                         ],
                         2
                       )
@@ -67013,25 +67517,130 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm.distribution === "add"
-                  ? _c("div", { staticClass: "form-group" }, [_vm._m(21)])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.distribution === "add"
-                  ? _c("div", { staticClass: "form-group" }, [_vm._m(22)])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._m(23),
-                _vm._v(" "),
-                _vm._m(24),
-                _vm._v(" "),
-                _vm._m(25)
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md",
+                        staticStyle: { "text-align": "right" }
+                      },
+                      [
+                        _vm.jumlah_odp != "tanpaodp"
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-primary btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.tampilkanRekomendasiOdp()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v("Tampilkan Rekomendasi ODP  "),
+                                _c("i", { staticClass: "fas fa-arrow-right" })
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.jumlah_odp === "tanpaodp"
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-success btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.saveAndFinish()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v("\n\t\t\t\t\t\t\t\t\t\t\tBooking ODC  "),
+                                _c("i", { staticClass: "fas fa-book" })
+                              ]
+                            )
+                          : _vm._e()
+                      ]
+                    )
+                  ])
+                ])
               ])
             ])
           ])
         ]),
         _vm._v(" "),
-        _vm._m(26)
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card border-danger" }, [
+            _vm._m(32),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-md" },
+                  _vm._l(_vm.datas, function(row) {
+                    return _c("li", [
+                      _c("span", { staticClass: "badge badge-primary" }, [
+                        _vm._v(_vm._s(row.label))
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge badge-primary" }, [
+                        _vm._v(_vm._s(row.frame))
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge badge-success" }, [
+                        _vm._v("OGP")
+                      ]),
+                      _vm._v(" "),
+                      _c("span", [_vm._v("✓")])
+                    ])
+                  })
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "row",
+                staticStyle: { height: "40px !important" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md",
+                    staticStyle: { "text-align": "center" }
+                  },
+                  [
+                    this.datas.length > 0
+                      ? _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-success btn-sm",
+                            on: {
+                              click: function($event) {
+                                _vm.saveAndFinish()
+                              }
+                            }
+                          },
+                          [
+                            _vm._v("\n\t\t\t\t\t\t\t\t\tSetujui dan simpan  "),
+                            _c("i", { staticClass: "fas fa-save" })
+                          ]
+                        )
+                      : _vm._e()
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _vm.loading
+                ? _c("div", { staticClass: "row" }, [_vm._m(33)])
+                : _vm._e()
+            ])
+          ])
+        ])
       ])
     ])
   ])
@@ -67155,28 +67764,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3" }, [
-          _c("label", { attrs: { for: "nama_projek" } }, [
-            _vm._v("Nama Projek")
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-          [_c("label", [_vm._v(" : ")])]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("input", {
-            staticClass: "form-control form-control-sm",
-            attrs: { type: "text", placeholder: "Nama projek" }
-          })
-        ])
-      ])
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "nama_projek" } }, [_vm._v("Nama Projek")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
   },
   function() {
     var _vm = this
@@ -67218,28 +67818,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3" }, [
-          _c("label", { attrs: { for: "nomor_kontrak" } }, [
-            _vm._v("Nomor Kontrak")
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-          [_c("label", [_vm._v(" : ")])]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("input", {
-            staticClass: "form-control form-control-sm",
-            attrs: { type: "text", placeholder: "Nomor kontrak" }
-          })
-        ])
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "nomor_kontrak" } }, [
+        _vm._v("Nomor Kontrak")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
   },
   function() {
     var _vm = this
@@ -67263,24 +67856,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("label", { attrs: { for: "odc_baru" } }, [_vm._v("Nama ODC Baru")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-        [_c("label", [_vm._v(" : ")])]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("input", {
-          staticClass: "form-control form-control-sm",
-          attrs: { type: "text", placeholder: "Nama ODC Baru" }
-        })
-      ])
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "odc_baru" } }, [_vm._v("Nama ODC Baru")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
   },
   function() {
     var _vm = this
@@ -67322,24 +67910,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("label", { attrs: { for: "distribution_baru" } }, [
-          _vm._v("Nama Distribusi Baru")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-        [_c("label", [_vm._v(" : ")])]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("input", {
-          staticClass: "form-control form-control-sm",
-          attrs: { type: "text", placeholder: "Nama Distribusi Baru" }
-        })
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "distribution_baru" } }, [
+        _vm._v("Nama Distribusi Baru")
       ])
     ])
   },
@@ -67347,31 +67920,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-3" }, [
-        _c("label", { attrs: { for: "capacityofdistribustion" } }, [
-          _vm._v("Kapasitas Distribusi Baru")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-        [_c("label", [_vm._v(" : ")])]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("select", { staticClass: "form-control form-control-sm" }, [
-          _c("option", [_vm._v("1")]),
-          _vm._v(" "),
-          _c("option", [_vm._v("2")]),
-          _vm._v(" "),
-          _c("option", [_vm._v("3")]),
-          _vm._v(" "),
-          _c("option", [_vm._v("4")]),
-          _vm._v(" "),
-          _c("option", [_vm._v("5")])
-        ])
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "capacityofdistribution" } }, [
+        _vm._v("Kapasitas Distribusi Baru")
       ])
     ])
   },
@@ -67379,102 +67940,62 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3" }, [
-          _c("label", { attrs: { for: "tipe_projek" } })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-          [_c("label")]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("i", [
-            _c("b", [
-              _vm._v("Kapasitas : kabel {num} "),
-              _c("br"),
-              _vm._v(" Core sisa : {num} core "),
-              _c("br"),
-              _vm._v(" Rekomendasi jumlah odp : {num} ODP")
-            ])
-          ])
-        ])
-      ])
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "tipe_projek" } })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-3" }, [
-          _c("label", { attrs: { for: "tipe_projek" } }, [_vm._v("Jumlah ODP")])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
-          [_c("label", [_vm._v(" : ")])]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("select", { staticClass: "form-control form-control-sm" }, [
-            _c("option", [_vm._v("1")]),
-            _vm._v(" "),
-            _c("option", [_vm._v("2")]),
-            _vm._v(" "),
-            _c("option", [_vm._v("3")]),
-            _vm._v(" "),
-            _c("option", [_vm._v("4")]),
-            _vm._v(" "),
-            _c("option", [_vm._v("5")])
-          ])
-        ])
-      ])
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label")]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "jumlah_odp" } }, [_vm._v("Jumlah ODP")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-md", staticStyle: { "text-align": "right" } },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary btn-sm",
-                attrs: { type: "button" }
-              },
-              [
-                _vm._v("Tampilkan Rekomendasi ODP  "),
-                _c("i", { staticClass: "fas fa-arrow-right" })
-              ]
-            )
-          ]
-        )
-      ])
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_c("i", [_vm._v("Daftar ODP Baru")])])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-4" }, [
-      _c("div", { staticClass: "card border-danger" }, [
-        _c("div", { staticClass: "card-header" }, [
-          _c("b", [_c("i", [_vm._v("Daftar ODP Baru")])])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" })
-      ])
+    return _c("div", { staticClass: "col-md" }, [
+      _c("b", [_c("i", [_vm._v("Memuat ...")])])
     ])
   }
 ]
@@ -67492,7 +68013,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(252)
 /* template */
@@ -67540,9 +68061,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
 //
 //
 //
@@ -68290,6 +68810,8 @@ var render = function() {
                               on: {
                                 click: function($event) {
                                   _vm.formgponshow = true
+                                  _vm.typeform = "add"
+                                  _vm.reset()
                                 }
                               }
                             },
@@ -69081,11 +69603,12 @@ if (false) {
 /* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var normalizeComponent = __webpack_require__(2)
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(255)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(256)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -69104,18 +69627,1382 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources/assets/js/components/OdfComponent.vue"
 
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-fccabafa", Component.options)
+  } else {
+    hotAPI.reload("data-v-fccabafa", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
 module.exports = Component.exports
 
 
 /***/ }),
 /* 255 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			typeform: 'add',
+			formodfshow: false,
+			loading: false,
+			done: false,
+			regionals: [],
+			regional: '',
+			witels: [],
+			witel: '',
+			stos: [],
+			sto: '',
+			id: '',
+			odfs: [],
+			odf: '',
+			mitras: [],
+			mitra: '',
+			statusconss: [],
+			statuscons: '',
+			statusinvs: [],
+			statusinv: '',
+			name: '',
+			address: '',
+			lokasi: '',
+			columns: ['name', 'opsi'],
+			small: true,
+			options: {
+				headings: {
+					name: 'Nama',
+					opsi: 'Opsi'
+				},
+				sortable: ['name'],
+				filterable: ['name'],
+				pagination: { chunk: 10, dropdown: false }
+			}
+		};
+	},
+
+	methods: {
+		allRegional: function allRegional() {
+			var _this = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentregional').then(function (response) {
+				_this.regionals = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allWitel: function allWitel() {
+			var _this2 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentwitel/' + this.regional).then(function (response) {
+				_this2.witels = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allSto: function allSto() {
+			var _this3 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentsto/' + this.witel).then(function (response) {
+				_this3.stos = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allOdf: function allOdf() {
+			var _this4 = this;
+
+			if (this.sto == 0) {
+				alert('STO tidak boleh kosong');
+
+				this.loading = false;
+				this.done = false;
+			} else {
+				this.loading = true;
+				this.done = false;
+
+				__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/alproodfcontentodf', {
+					sto: this.sto
+				}).then(function (response) {
+					_this4.loading = false;
+					_this4.done = true;
+					_this4.odfs = response.data.data;
+				}).catch(function (error) {
+					return console.log(error.message);
+				});
+			}
+		},
+		allMitra: function allMitra() {
+			var _this5 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentmitra').then(function (response) {
+				_this5.mitras = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allStatusCons: function allStatusCons() {
+			var _this6 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentstatuscons').then(function (response) {
+				_this6.statusconss = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allStatusInv: function allStatusInv() {
+			var _this7 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentstatusinv').then(function (response) {
+				_this7.statusinvs = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		addOdf: function addOdf() {
+			var _this8 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/alproodfcontentodfadd', {
+				name: this.name,
+				regional_id: this.regional,
+				witel_id: this.witel,
+				sto_id: this.sto,
+				mitra_id: this.mitra,
+				statuscons_id: this.statuscons,
+				statusinv_id: this.statusinv,
+				lokasi: this.lokasi
+			}).then(function (response) {
+				alert('Odf baru berhasil ditambah');
+				_this8.allOdf();
+				_this8.reset();
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		reset: function reset() {
+			this.name = '';
+			this.mitra = '';
+			this.statuscons = '';
+			this.statusinv = '';
+			this.lokasi = '';
+		},
+		showOdf: function showOdf(id) {
+			var _this9 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodfcontentodfshow/' + id).then(function (response) {
+				_this9.id = response.data.data.id, _this9.name = response.data.data.name, _this9.regional = response.data.data.regional_id, _this9.witel = response.data.data.witel_id, _this9.sto = response.data.data.sto_id, _this9.mitra = response.data.data.mitra_id, _this9.statuscons = response.data.data.statuscons_id, _this9.statusinv = response.data.data.statusinv_id, _this9.lokasi = response.data.data.lat + ',' + response.data.data.lng;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		editOdf: function editOdf(id) {
+			var _this10 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.put('/alproodfcontentodfedit/' + this.id, {
+				name: this.name,
+				regional_id: this.regional,
+				witel_id: this.witel,
+				sto_id: this.sto,
+				mitra_id: this.mitra,
+				statuscons_id: this.statuscons,
+				statusinv_id: this.statusinv,
+				lokasi: this.lokasi
+			}).then(function (response) {
+				alert('Odf berhasil diubah');
+				_this10.allOdf();
+				_this10.reset();
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		}
+	},
+	mounted: function mounted() {
+		console.log('Component mounted.');
+		this.allRegional();
+		this.allMitra();
+		this.allStatusInv();
+		this.allStatusCons();
+	}
+});
+
+/***/ }),
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var normalizeComponent = __webpack_require__(2)
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "row",
+        staticStyle: { height: "25px !important" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-7" }, [
+          _c("div", { staticClass: "card border-primary" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.allOdf($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.regional,
+                                expression: "regional"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "regional", name: "regional" },
+                            on: {
+                              change: [
+                                function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.regional = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                },
+                                function($event) {
+                                  _vm.allWitel()
+                                }
+                              ]
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Regional")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.regionals, function(regional) {
+                              return _c(
+                                "option",
+                                { domProps: { value: regional.id } },
+                                [_vm._v(_vm._s(regional.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.witel,
+                                expression: "witel"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "witel", name: "witel" },
+                            on: {
+                              change: [
+                                function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.witel = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                },
+                                function($event) {
+                                  _vm.allSto()
+                                }
+                              ]
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Witel")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.witels, function(witel) {
+                              return _c(
+                                "option",
+                                { domProps: { value: witel.id } },
+                                [_vm._v(_vm._s(witel.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.sto,
+                                expression: "sto"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "sto", name: "sto" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.sto = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih STO")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.stos, function(sto) {
+                              return _c(
+                                "option",
+                                { domProps: { value: sto.id } },
+                                [_vm._v(_vm._s(sto.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(8)
+                ]
+              ),
+              _vm._v(" "),
+              _vm.loading ? _c("div", [_vm._m(9)]) : _vm._e(),
+              _vm._v(" "),
+              _vm.done
+                ? _c("div", [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-12" },
+                        [
+                          _c("v-client-table", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.odfs,
+                              options: _vm.options
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "opsi",
+                                fn: function(ref) {
+                                  var row = ref.row
+                                  return _c("span", {}, [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-secondary btn-sm",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.formodfshow = true
+                                            _vm.typeform = "edit"
+                                            _vm.showOdf(row.id)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v("EDIT "),
+                                        _c("i", { staticClass: "fas fa-edit" })
+                                      ]
+                                    )
+                                  ])
+                                }
+                              }
+                            ])
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "col-md",
+                          staticStyle: { "text-align": "right" }
+                        },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-primary btn-sm",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.formodfshow = true
+                                  _vm.typeform = "add"
+                                  _vm.reset()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v("Tambah  "),
+                              _c("i", { staticClass: "fas fa-plus-circle" })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                : _vm._e()
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.formodfshow,
+                expression: "formodfshow"
+              }
+            ],
+            staticClass: "col-md-5"
+          },
+          [
+            _c("div", { staticClass: "card border-danger" }, [
+              _vm._m(10),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.addOdf($event)
+                      }
+                    }
+                  },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.typeform,
+                          expression: "typeform"
+                        }
+                      ],
+                      attrs: {
+                        type: "hidden",
+                        id: "typeform",
+                        name: "typeform"
+                      },
+                      domProps: { value: _vm.typeform },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.typeform = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(11),
+                        _vm._v(" "),
+                        _vm._m(12),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-7" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.name,
+                                expression: "name"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Nama Odf",
+                              name: "name",
+                              id: "name"
+                            },
+                            domProps: { value: _vm.name },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.name = $event.target.value
+                              }
+                            }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(13),
+                        _vm._v(" "),
+                        _vm._m(14),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-7" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.mitra,
+                                  expression: "mitra"
+                                }
+                              ],
+                              staticClass: "form-control form-control-sm",
+                              attrs: { id: "mitra", name: "mitra" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.mitra = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { domProps: { value: 0 } }, [
+                                _vm._v("Pilih Mitra")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.mitras, function(mitra) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: mitra.id } },
+                                  [_vm._v(_vm._s(mitra.name))]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(15),
+                        _vm._v(" "),
+                        _vm._m(16),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-7" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.statuscons,
+                                  expression: "statuscons"
+                                }
+                              ],
+                              staticClass: "form-control form-control-sm",
+                              attrs: { id: "statuscons", name: "statuscons" },
+                              on: {
+                                change: function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.statuscons = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                }
+                              }
+                            },
+                            [
+                              _c("option", { domProps: { value: 0 } }, [
+                                _vm._v("Pilih Status")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.statusconss, function(statuscons) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: statuscons.id } },
+                                  [_vm._v(_vm._s(statuscons.name))]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(17),
+                        _vm._v(" "),
+                        _vm._m(18),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-7" }, [
+                          _c(
+                            "select",
+                            {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model",
+                                  value: _vm.statusinv,
+                                  expression: "statusinv"
+                                }
+                              ],
+                              staticClass: "form-control form-control-sm",
+                              attrs: { id: "statusinv", name: "statusinv" },
+                              on: {
+                                change: [
+                                  function($event) {
+                                    var $$selectedVal = Array.prototype.filter
+                                      .call($event.target.options, function(o) {
+                                        return o.selected
+                                      })
+                                      .map(function(o) {
+                                        var val =
+                                          "_value" in o ? o._value : o.value
+                                        return val
+                                      })
+                                    _vm.statusinv = $event.target.multiple
+                                      ? $$selectedVal
+                                      : $$selectedVal[0]
+                                  },
+                                  function($event) {}
+                                ]
+                              }
+                            },
+                            [
+                              _c("option", { domProps: { value: 0 } }, [
+                                _vm._v("Pilih Mitra")
+                              ]),
+                              _vm._v(" "),
+                              _vm._l(_vm.statusinvs, function(statusinv) {
+                                return _c(
+                                  "option",
+                                  { domProps: { value: statusinv.id } },
+                                  [_vm._v(_vm._s(statusinv.name))]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(19),
+                        _vm._v(" "),
+                        _vm._m(20),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-7" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.lokasi,
+                                expression: "lokasi"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Lokasi",
+                              name: "lokasi",
+                              id: "lokasi"
+                            },
+                            domProps: { value: _vm.lokasi },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.lokasi = $event.target.value
+                              }
+                            }
+                          })
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-md",
+                            staticStyle: { "text-align": "right" }
+                          },
+                          [
+                            _vm.typeform === "edit"
+                              ? _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-success btn-sm",
+                                    attrs: { type: "button" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.editOdf()
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v("Simpan  "),
+                                    _c("i", { staticClass: "fas fa-save" })
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.typeform === "add"
+                              ? _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-primary btn-sm",
+                                    attrs: { type: "submit" }
+                                  },
+                                  [
+                                    _vm._v("Tambah  "),
+                                    _c("i", {
+                                      staticClass: "fas fa-plus-circle"
+                                    })
+                                  ]
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-danger btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.formodfshow = false
+                                    _vm.reset()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v("Batal  "),
+                                _c("i", { staticClass: "fas fa-ban" })
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.typeform === "edit"
+                      ? _c("div", { staticClass: "form-group" }, [_vm._m(21)])
+                      : _vm._e()
+                  ]
+                )
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card text-white bg-info" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("b", [_c("i", [_vm._v("Instruksi")])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("li", [
+              _vm._v(
+                "\n                        \tIsi data odf sesuai urutan, mulai dari regional, witel, sto, dst. Untuk memfilter pencarian data odf.\n                        "
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _vm._v(
+                "\n\t\t\t\t\t\t\tIsi form odf dengan cermat, mulai dari nama, mitra, lokasi, dst.\n\t\t\t\t\t\t"
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _vm._v(
+                "\n                        \tJika ingin menambah odf baru harus mengisi data odf terlebih dahulu, kemudian form odf.\n                        "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_c("i", [_vm._v("Data Odf")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "regional" } }, [_vm._v("Regional")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "witel" } }, [_vm._v("Witel")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "sto" } }, [_vm._v("STO")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-md", staticStyle: { "text-align": "right" } },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-sm",
+                attrs: { type: "submit" }
+              },
+              [
+                _vm._v("Tampilkan Odf  "),
+                _c("i", { staticClass: "far fa-arrow-alt-circle-down" })
+              ]
+            )
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("i", [_vm._v("Menunggu ...")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_c("i", [_vm._v("Form Odf")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "odf" } }, [_vm._v("Nama Odf")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "mitra" } }, [_vm._v("Mitra")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "statuscons" } }, [_vm._v("S. Pembangunan")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "statusinv" } }, [_vm._v("S. Inventori")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "lokasi" } }, [_vm._v("Lokasi")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("label", { attrs: { for: "histori" } }, [_vm._v("Histori")])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+        [_c("label", [_vm._v(" : ")])]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-7" }, [
+        _c("input", {
+          staticClass: "form-control form-control-sm",
+          attrs: { type: "text", placeholder: "Histori" }
+        })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-fccabafa", module.exports)
+  }
+}
+
+/***/ }),
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(258)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(259)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -69134,14 +71021,1426 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources/assets/js/components/OdcComponent.vue"
 
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-47fd74b4", Component.options)
+  } else {
+    hotAPI.reload("data-v-47fd74b4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
 module.exports = Component.exports
 
 
 /***/ }),
-/* 256 */
+/* 258 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			typeform: 'edit',
+			formodcshow: false,
+			loading: false,
+			done: false,
+			regionals: [],
+			regional: '',
+			witels: [],
+			witel: '',
+			stos: [],
+			sto: '',
+			id: '',
+			odcs: [],
+			odc: '',
+			odcspecs: [],
+			odcspec: '',
+			mitras: [],
+			mitra: '',
+			projek: '',
+			typeprojects: [],
+			typeproject: '',
+			statusconss: [],
+			statuscons: '',
+			statusinvs: [],
+			statusinv: '',
+			name: '',
+			address: '',
+			lokasi: '',
+			columns: ['name', 'spesifikasi', 'projek', 'mitra', 'opsi'],
+			small: true,
+			options: {
+				headings: {
+					name: 'Nama',
+					spesifikasi: 'Spesifikasi',
+					projek: 'Projek',
+					mitra: 'Mitra',
+					opsi: 'opsi'
+				},
+				sortable: ['name', 'spesifikasi', 'projek', 'mitra '],
+				filterable: ['name', 'spesifikasi', 'projek', 'mitra'],
+				pagination: { chunk: 10, dropdown: false }
+			}
+		};
+	},
+
+	methods: _defineProperty({
+		allRegional: function allRegional() {
+			var _this = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentregional').then(function (response) {
+				_this.regionals = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allWitel: function allWitel() {
+			var _this2 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentwitel/' + this.regional).then(function (response) {
+				_this2.witels = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allSto: function allSto() {
+			var _this3 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentsto/' + this.witel).then(function (response) {
+				_this3.stos = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allOdc: function allOdc() {
+			var _this4 = this;
+
+			if (this.sto == 0) {
+				alert('STO tidak boleh kosong');
+
+				this.loading = false;
+				this.done = false;
+			} else {
+				this.loading = true;
+				this.done = false;
+
+				__WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/alproodccontentodc', {
+					sto: this.sto
+				}).then(function (response) {
+					_this4.loading = false;
+					_this4.done = true;
+					_this4.odcs = response.data.data;
+				}).catch(function (error) {
+					return console.log(error.message);
+				});
+			}
+		},
+		allOdcSpec: function allOdcSpec() {
+			var _this5 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentodcspec').then(function (response) {
+				_this5.odcspecs = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allTypeProj: function allTypeProj() {
+			var _this6 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontenttypeproj').then(function (response) {
+				_this6.typeprojects = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allStatusCons: function allStatusCons() {
+			var _this7 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentstatuscons').then(function (response) {
+				_this7.statusconss = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allStatusInv: function allStatusInv() {
+			var _this8 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentstatusinv').then(function (response) {
+				_this8.statusinvs = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		},
+		allMitra: function allMitra() {
+			var _this9 = this;
+
+			__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentmitra').then(function (response) {
+				_this9.mitras = response.data.data;
+			}).catch(function (error) {
+				return console.log(error.message);
+			});
+		}
+	}, 'allMitra', function allMitra() {
+		var _this10 = this;
+
+		__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/alproodccontentmitra').then(function (response) {
+			_this10.mitras = response.data.data;
+		}).catch(function (error) {
+			return console.log(error.message);
+		});
+	}),
+	mounted: function mounted() {
+		console.log('Component mounted.');
+		this.allRegional();
+		this.allOdcSpec();
+		this.allTypeProj();
+		this.allStatusInv();
+		this.allStatusCons();
+		this.allMitra();
+	}
+});
+
+/***/ }),
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var normalizeComponent = __webpack_require__(2)
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "row",
+        staticStyle: { height: "25px !important" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-7" }, [
+          _c("div", { staticClass: "card border-primary" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.allOdc($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _vm._m(3),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.regional,
+                                expression: "regional"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "regional", name: "regional" },
+                            on: {
+                              change: [
+                                function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.regional = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                },
+                                function($event) {
+                                  _vm.allWitel()
+                                }
+                              ]
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Regional")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.regionals, function(regional) {
+                              return _c(
+                                "option",
+                                { domProps: { value: regional.id } },
+                                [_vm._v(_vm._s(regional.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(4),
+                      _vm._v(" "),
+                      _vm._m(5),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.witel,
+                                expression: "witel"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "witel", name: "witel" },
+                            on: {
+                              change: [
+                                function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.witel = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                },
+                                function($event) {
+                                  _vm.allSto()
+                                }
+                              ]
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Witel")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.witels, function(witel) {
+                              return _c(
+                                "option",
+                                { domProps: { value: witel.id } },
+                                [_vm._v(_vm._s(witel.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(6),
+                      _vm._v(" "),
+                      _vm._m(7),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.sto,
+                                expression: "sto"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "sto", name: "sto" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.sto = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih STO")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.stos, function(sto) {
+                              return _c(
+                                "option",
+                                { domProps: { value: sto.id } },
+                                [_vm._v(_vm._s(sto.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(8)
+                ]
+              ),
+              _vm._v(" "),
+              _vm.loading ? _c("div", [_vm._m(9)]) : _vm._e(),
+              _vm._v(" "),
+              _vm.done
+                ? _c("div", [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-12" },
+                        [
+                          _c("v-client-table", {
+                            attrs: {
+                              columns: _vm.columns,
+                              data: _vm.odcs,
+                              options: _vm.options
+                            },
+                            scopedSlots: _vm._u([
+                              {
+                                key: "opsi",
+                                fn: function(ref) {
+                                  var row = ref.row
+                                  return _c("span", {}, [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass: "btn btn-secondary btn-sm",
+                                        on: {
+                                          click: function($event) {
+                                            _vm.formodcshow = true
+                                            _vm.typeform = "edit"
+                                            _vm.showOdf(row.id)
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _vm._v("EDIT "),
+                                        _c("i", { staticClass: "fas fa-edit" })
+                                      ]
+                                    )
+                                  ])
+                                }
+                              }
+                            ])
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ])
+                : _vm._e()
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.formodcshow,
+                expression: "formodcshow"
+              }
+            ],
+            staticClass: "col-md-5"
+          },
+          [
+            _c("div", { staticClass: "card border-danger" }, [
+              _vm._m(10),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("form", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.typeform,
+                        expression: "typeform"
+                      }
+                    ],
+                    attrs: { type: "hidden", id: "typeform", name: "typeform" },
+                    domProps: { value: _vm.typeform },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.typeform = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(11),
+                      _vm._v(" "),
+                      _vm._m(12),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.name,
+                              expression: "name"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: {
+                            type: "text",
+                            placeholder: "Nama Odc",
+                            name: "name",
+                            id: "name"
+                          },
+                          domProps: { value: _vm.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.name = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(13),
+                      _vm._v(" "),
+                      _vm._m(14),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.odcspec,
+                                expression: "odcspec"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "odcspec", name: "odcspec" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.odcspec = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Spesifikasi")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.odcspecs, function(odcspec) {
+                              return _c(
+                                "option",
+                                { domProps: { value: odcspec.id } },
+                                [_vm._v(_vm._s(odcspec.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(15),
+                      _vm._v(" "),
+                      _vm._m(16),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.projek,
+                              expression: "projek"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: {
+                            type: "text",
+                            placeholder: "Nama Projek",
+                            name: "projek",
+                            id: "projek"
+                          },
+                          domProps: { value: _vm.projek },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.projek = $event.target.value
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(17),
+                      _vm._v(" "),
+                      _vm._m(18),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.typeproject,
+                                expression: "typeproject"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "typeproject", name: "typeproject" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.typeproject = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Tipe")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.typeprojects, function(typeproject) {
+                              return _c(
+                                "option",
+                                { domProps: { value: typeproject.id } },
+                                [_vm._v(_vm._s(typeproject.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(19),
+                      _vm._v(" "),
+                      _vm._m(20),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.mitra,
+                                expression: "mitra"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "mitra", name: "mitra" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.mitra = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Mitra")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.mitras, function(mitra) {
+                              return _c(
+                                "option",
+                                { domProps: { value: mitra.id } },
+                                [_vm._v(_vm._s(mitra.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(21),
+                      _vm._v(" "),
+                      _vm._m(22),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.statuscons,
+                                expression: "statuscons"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "statuscons", name: "statuscons" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.statuscons = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Status")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.statusconss, function(statuscons) {
+                              return _c(
+                                "option",
+                                { domProps: { value: statuscons.id } },
+                                [_vm._v(_vm._s(statuscons.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(23),
+                      _vm._v(" "),
+                      _vm._m(24),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-7" }, [
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.statusinv,
+                                expression: "statusinv"
+                              }
+                            ],
+                            staticClass: "form-control form-control-sm",
+                            attrs: { id: "statusinv", name: "statusinv" },
+                            on: {
+                              change: [
+                                function($event) {
+                                  var $$selectedVal = Array.prototype.filter
+                                    .call($event.target.options, function(o) {
+                                      return o.selected
+                                    })
+                                    .map(function(o) {
+                                      var val =
+                                        "_value" in o ? o._value : o.value
+                                      return val
+                                    })
+                                  _vm.statusinv = $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                },
+                                function($event) {}
+                              ]
+                            }
+                          },
+                          [
+                            _c("option", { domProps: { value: 0 } }, [
+                              _vm._v("Pilih Mitra")
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(_vm.statusinvs, function(statusinv) {
+                              return _c(
+                                "option",
+                                { domProps: { value: statusinv.id } },
+                                [_vm._v(_vm._s(statusinv.name))]
+                              )
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "row" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "col-md",
+                          staticStyle: { "text-align": "right" }
+                        },
+                        [
+                          _vm.typeform === "edit"
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-success btn-sm",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      _vm.editOdc()
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v("Simpan  "),
+                                  _c("i", { staticClass: "fas fa-save" })
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-danger btn-sm",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.formodcshow = false
+                                }
+                              }
+                            },
+                            [
+                              _vm._v("Batal  "),
+                              _c("i", { staticClass: "fas fa-ban" })
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card text-white bg-info" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("b", [_c("i", [_vm._v("Instruksi")])])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("li", [
+              _vm._v(
+                "\n                        \tIsi data odc sesuai urutan, mulai dari regional, witel, sto, dst. Untuk memfilter pencarian data odc.\n                        "
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _vm._v(
+                "\n\t\t\t\t\t\t\tIsi form odc dengan cermat, mulai dari nama, spesifikasi, mitra, dst.\n\t\t\t\t\t\t"
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _vm._v(
+                "\n                        \tJika ingin menambah odc baru harus mengisi data odc terlebih dahulu, kemudian form odc.\n                        "
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_c("i", [_vm._v("Data Odc")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "regional" } }, [_vm._v("Regional")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "witel" } }, [_vm._v("Witel")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3" }, [
+      _c("label", { attrs: { for: "sto" } }, [_vm._v("STO")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-md", staticStyle: { "text-align": "right" } },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-sm",
+                attrs: { type: "submit" }
+              },
+              [
+                _vm._v("Tampilkan Odc  "),
+                _c("i", { staticClass: "far fa-arrow-alt-circle-down" })
+              ]
+            )
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", [_c("i", [_vm._v("Menunggu ...")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("b", [_c("i", [_vm._v("Form Odc")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "odc" } }, [_vm._v("Nama Odc")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "odcspec" } }, [_vm._v("Spesifikasi")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "odf" } }, [_vm._v("Projek")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "typeproject" } }, [_vm._v("Tipe Projek")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "mitra" } }, [_vm._v("Mitra")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "statuscons" } }, [_vm._v("S. Pembangunan")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("label", { attrs: { for: "statusinv" } }, [_vm._v("S. Inventori")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "col-md-1", staticStyle: { "text-align": "center" } },
+      [_c("label", [_vm._v(" : ")])]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-47fd74b4", module.exports)
+  }
+}
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = null
 /* template */
@@ -69168,7 +72467,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 257 */
+/* 261 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

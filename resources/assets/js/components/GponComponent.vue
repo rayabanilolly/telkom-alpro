@@ -1,5 +1,4 @@
 <template>
-	</style>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
@@ -102,7 +101,7 @@
 
 								<div class="row">
 									<div class="col-md" style="text-align: right;">
-										<button type="button" class="btn btn-primary btn-sm" v-on:click="formgponshow = true">Tambah &nbsp<i class="fas fa-plus-circle"></i></button>
+										<button type="button" class="btn btn-primary btn-sm" v-on:click="formgponshow = true; typeform = 'add'; reset()">Tambah &nbsp<i class="fas fa-plus-circle"></i></button>
 									</div>
 								</div>
 							</div>
@@ -398,7 +397,7 @@ import axios from 'axios';
 				);
 			},
 			addGpon() {
-				axios.post('/alprogponcontentgponadd',{
+				axios.post('/alprogponcontentgponadd', {
 					name: this.name,
 					address: this.address,
 					gponmerk_id: this.gponmerk,

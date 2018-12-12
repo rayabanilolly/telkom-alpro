@@ -30,6 +30,7 @@ Route::get('/bookingcontenttypeproj', 'BookingContent@typeproj');
 Route::get('/bookingcontentodc/{sto_id}', 'BookingContent@odc');
 Route::get('/bookingcontentodcspec', 'BookingContent@odcspec');
 Route::get('/bookingcontentdistribution/{odc_id}', 'BookingContent@distribution');
+Route::post('/bookingcontentbooking', 'BookingContent@booking');
 
 Route::get('/alprogponcontentregional', 'BookingContent@regional');
 Route::get('/alprogponcontentwitel/{regional_id}', 'BookingContent@witel');
@@ -42,3 +43,24 @@ Route::post('/alprogponcontentgpon', 'GponContent@gpon');
 Route::post('/alprogponcontentgponadd', 'GponContent@gponadd');
 Route::get('/alprogponcontentgponshow/{gpon_id}', 'GponContent@gponshow');
 Route::put('/alprogponcontentgponedit/{gpon_id}', 'GponContent@gponedit');
+
+Route::get('/alproodfcontentregional', 'BookingContent@regional');
+Route::get('/alproodfcontentwitel/{regional_id}', 'BookingContent@witel');
+Route::get('/alproodfcontentsto/{witel_id}', 'BookingContent@sto');
+Route::post('/alproodfcontentodf', 'OdfContent@odf');
+Route::get('/alproodfcontentmitra', 'BookingContent@mitra');
+Route::get('/alproodfcontentstatuscons', 'GponContent@statuscons');
+Route::get('/alproodfcontentstatusinv', 'GponContent@statusinv');
+Route::post('/alproodfcontentodfadd', 'OdfContent@odfadd');
+Route::get('/alproodfcontentodfshow/{odf_id}', 'OdfContent@odfshow');
+Route::put('/alproodfcontentodfedit/{odf_id}', 'OdfContent@odfedit');
+
+Route::get('/alproodccontentregional', 'BookingContent@regional');
+Route::get('/alproodccontentwitel/{regional_id}', 'BookingContent@witel');
+Route::get('/alproodccontentsto/{witel_id}', 'BookingContent@sto');
+Route::post('/alproodccontentodc', 'OdcContent@odc');
+Route::get('/alproodccontentodcspec', 'OdcContent@odcspec');
+Route::get('/alproodccontenttypeproj', 'OdcContent@typeproject');
+Route::get('/alproodccontentstatuscons', 'GponContent@statuscons');
+Route::get('/alproodccontentstatusinv', 'GponContent@statusinv');
+Route::get('/alproodccontentmitra', 'BookingContent@mitra');

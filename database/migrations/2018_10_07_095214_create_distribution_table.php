@@ -21,7 +21,7 @@ class CreateDistributionTable extends Migration
             $table->enum('distributions', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']);
             $table->integer('odc_id');
             $table->enum('capacity', ['12', '24']);
-            $table->integer('panel1');
+            $table->integer('panel1')->default(0);
             $table->integer('panel2')->default(0);
             $table->enum('deleted', ['0', '1'])->default('0');
             $table->timestamps();

@@ -44,7 +44,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="regional" name="regional" v-model="regional" v-on:change="allWitel()">
+											<select class="form-control form-control-sm" id="regional" name="regional" v-model="regional" @change="allWitel()">
 												<option :value="0">Pilih Regional</option>
 												<option :value="regional.id" v-for="regional in regionals">{{ regional.name }}</option>
 											</select>
@@ -60,7 +60,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="witel" name="witel" v-model="witel" v-on:change="allSto()">
+											<select class="form-control form-control-sm" id="witel" name="witel" v-model="witel" @change="allSto()">
 												<option :value="0">Pilih Witel</option>
 												<option :value="witel.id" v-for="witel in witels">{{ witel.name }}</option>
 											</select>
@@ -76,7 +76,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="sto" name="sto" v-model="sto" v-on:change="allOdc()">
+											<select class="form-control form-control-sm" id="sto" name="sto" v-model="sto" @change="allOdc()">
 												<option :value="0">Pilih STO</option>
 												<option :value="sto.id" v-for="sto in stos">{{ sto.name }}</option>
 											</select>
@@ -92,7 +92,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control form-control-sm" placeholder="Nama projek">
+											<input type="text" class="form-control form-control-sm" placeholder="Nama projek" id="nama_projek" name="nama_projek" v-model="nama_projek">
 										</div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="typeproj" name="typeproj">
+											<select class="form-control form-control-sm" id="typeproj" name="typeproj" v-model="typeproj">
 												<option :value="0">Pilih Tipe</option>
 												<option :value="type.id" v-for="type in types">{{ type.name }}</option>
 											</select>
@@ -137,7 +137,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control form-control-sm" placeholder="Nomor kontrak">
+											<input type="text" class="form-control form-control-sm" placeholder="Nomor kontrak" id="contract_number" name="contract_number" v-model="contract_number">
 										</div>
 									</div>
 								</div>
@@ -150,9 +150,9 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="odc" name="odc" v-model="odc" v-on:change="allDistribution()">
+											<select class="form-control form-control-sm" id="odc" name="odc" v-model="odc" @change="allDistribution()">
 												<option :value="0">Pilih ODC</option>
-												<option :value="odc.id" v-for="odc in odcs">{{ odc.name }}</option>
+												<option :value="odc.id" v-for="odc in odcs" v-bind:value="{text: odc.name}">{{ odc.name }}</option>
 												<option value="add">Tambah ODC Baru</option>
 											</select>
 										</div>
@@ -167,7 +167,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control form-control-sm" placeholder="Nama ODC Baru">
+											<input type="text" class="form-control form-control-sm" placeholder="Nama ODC Baru" id="odc_baru" name="odc_baru" v-model="odc_baru">
 										</div>
 									</div>
 								</div>
@@ -180,14 +180,14 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm" id="specofodc" name="specofodc">
+											<select class="form-control form-control-sm" id="specofodc" name="specofodc" v-model="specofodc">
 												<option :value="0">Pilih Spesifikasi</option>
-												<option :value="spec.id" v-for="spec in specofodc">{{ spec.name }}</option>
+												<option :value="spec.id" v-for="spec in specofodcs">{{ spec.name }}</option>
 											</select>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group" v-if="jumlah_odp != 'tanpaodp'">
 									<div class="row">
 										<div class="col-md-3">
 											<label for="distribution">Distribusi</label>
@@ -198,13 +198,13 @@
 										<div class="col-md-8">
 											<select class="form-control form-control-sm" id="distribution" name="distribution" v-model="distribution">
 												<option :value="0">Pilih Distribusi</option>
-												<option :value="distribution.id" v-for="distribution in distributions">{{ distribution.name }}</option>
+												<option :value="distribution.id" v-for="distribution in distributions" v-bind:value="{text: distribution.name}">{{ distribution.name }}</option>
 												<option value="add">Tambah Distribusi Baru</option>
 											</select>
 										</div>
 									</div>
 								</div>
-								<div class="form-group" v-if="distribution === 'add'">
+								<div class="form-group" v-if="distribution === 'add' && jumlah_odp != 'tanpaodp'">
 									<div class="row">
 										<div class="col-md-3">
 											<label for="distribution_baru">Nama Distribusi Baru</label>
@@ -213,25 +213,23 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<input type="text" class="form-control form-control-sm" placeholder="Nama Distribusi Baru">
+											<input type="text" class="form-control form-control-sm" placeholder="Nama Distribusi Baru" id="distribution_baru" name="distribution_baru" v-model="distribution_baru">
 										</div>
 									</div>
 								</div>
-								<div class="form-group" v-if="distribution === 'add'">
+								<div class="form-group" v-if="distribution === 'add' && jumlah_odp != 'tanpaodp'">
 									<div class="row">
 										<div class="col-md-3">
-											<label for="capacityofdistribustion">Kapasitas Distribusi Baru</label>
+											<label for="capacityofdistribution">Kapasitas Distribusi Baru</label>
 										</div>
 										<div class="col-md-1" style="text-align: center;">
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+											<select class="form-control form-control-sm" id="capacityofdistribution" name="capacityofdistribution" v-model="capacityofdistribution" @change="rekomendasiOdp()">
+												<option value="0">Pilih kapasitas</option>
+												<option value="12">12</option>
+												<option value="24">24</option>
 											</select>
 										</div>
 									</div>
@@ -245,25 +243,23 @@
 											<label> </label>
 										</div>
 										<div class="col-md-8">
-											<i><b>Kapasitas : kabel {num} <br> Core sisa : {num} core <br> Rekomendasi jumlah odp : {num} ODP</b></i>
+											<i><b>Kapasitas : kabel {{ capacityofdistributionforshow }} <br> Core sisa : {{ leftovercoreforshow }} core <br> Rekomendasi jumlah odp : {{ odprecommendationforshow }} ODP</b></i>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md-3">
-											<label for="tipe_projek">Jumlah ODP</label>
+											<label for="jumlah_odp">Jumlah ODP</label>
 										</div>
 										<div class="col-md-1" style="text-align: center;">
 											<label> : </label>
 										</div>
 										<div class="col-md-8">
-											<select class="form-control form-control-sm">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
-												<option>4</option>
-												<option>5</option>
+											<select class="form-control form-control-sm" id="jumlah_odp" name="jumlah_odp" v-model="jumlah_odp" @change="cekJumlahOdp()">
+												<option v-if="jumlah_odp === 'tanpaodp'" value="denganodp">Dengan Odp</option>
+												<option v-for="n in countodprecommendation" :value="n" v-if="jumlah_odp != 'tanpaodp'">{{ n }}</option>
+												<option value="tanpaodp" v-if="odc === 'add'">Tanpa Odp</option>
 											</select>
 										</div>
 									</div>
@@ -271,7 +267,9 @@
 								<div class="form-group">
 									<div class="row">
 										<div class="col-md" style="text-align: right;">
-											<button type="button" class="btn btn-primary btn-sm">Tampilkan Rekomendasi ODP &nbsp<i class="fas fa-arrow-right"></i></button>
+											<button type="button" class="btn btn-primary btn-sm" @click="tampilkanRekomendasiOdp()" v-if="jumlah_odp != 'tanpaodp'">Tampilkan Rekomendasi ODP &nbsp<i class="fas fa-arrow-right"></i></button>
+											<button type="button" class="btn btn-success btn-sm" @click="saveAndFinish()" v-if="jumlah_odp === 'tanpaodp'">
+												Booking ODC &nbsp<i class="fas fa-book"></i></button>
 										</div>
 									</div>
 								</div>
@@ -283,7 +281,29 @@
 					<div class="card border-danger">
 						<div class="card-header"><b><i>Daftar ODP Baru</i></b></div>
 						<div class="card-body">
-							
+							<div class="row">
+								<div class="col-md">
+									<li v-for="row in datas"> 
+										<span class="badge badge-primary">{{ row.label }}</span>
+										<span class="badge badge-primary">{{ row.frame }}</span>
+										<span class="badge badge-success">OGP</span></b>
+										<span>&#10003;</span></b>
+									</li>
+								</div>
+							</div>
+							<div class="row" style="height: 40px !important"></div>
+							<div class="row">
+								<div class="col-md" style="text-align: center;">
+									<button class="btn btn-success btn-sm" @click="saveAndFinish()" v-if="this.datas.length > 0">
+										Setujui dan simpan &nbsp<i class="fas fa-save"></i>
+									</button>
+								</div>
+							</div>
+							<div class="row" v-if="loading">
+								<div class="col-md">
+									<b><i>Memuat ...</i></b>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -297,6 +317,10 @@ import axios from 'axios';
 	export default{
 		data() {
 			return {
+				jumlah_odp: '',
+				nama_projek: '',
+				typeproj: '',
+				contract_number: '',
 				mitras: [],
 				mitra: '',
 				types: [],
@@ -308,10 +332,22 @@ import axios from 'axios';
 				sto: '',
 				odcs: [],
 				odc: '',
-				specofodc: [],
+				odc_baru: '',
+				specofodcs: [],
+				specofodc: '',
 				distributions: [],
 				distribution: '',
-				capacityofdistribustion: []
+				capacityofdistribution: '',
+				distribution_baru: '',
+				capacityofdistributionforshow: '-',
+				leftovercoreforshow: '-',
+				odprecommendationforshow: '-',
+				countodprecommendation: '',
+				startodplabel: '',
+				datas: [],
+				odctext: [],
+				distributiontext: '',
+				loading: false
 			}
 		},
 		methods: {
@@ -385,7 +421,7 @@ import axios from 'axios';
 				axios.get('/bookingcontentodcspec')
 				.then(
 					response => {
-						this.specofodc = response.data.data
+						this.specofodcs = response.data.data
 					}
 				)
 				.catch(
@@ -402,6 +438,104 @@ import axios from 'axios';
 				.catch(
 					(error) => console.log(error.message)
 				);
+			},
+			cekJumlahOdp() {
+				if(this.jumlah_odp == 'tanpaodp') {
+					this.distribution = '';
+					this.distribution_baru = '';
+					this.capacityofdistribution = '';
+					this.capacityofdistributionforshow = '-';
+					this.leftovercoreforshow = '-';
+					this.odprecommendationforshow = '-';
+				}
+				else if(this.jumlah_odp == 'denganodp') {
+					this.jumlah_odp = '';
+				} 
+			},
+			rekomendasiOdp() {
+				if(this.odc == 'add') {
+					if(this.distribution == 'add') {
+						this.capacityofdistributionforshow = this.capacityofdistribution;
+						this.leftovercoreforshow = this.capacityofdistribution;
+						this.odprecommendationforshow = (this.capacityofdistribution - (this.capacityofdistribution == 12 ? 2 : 4));
+						this.countodprecommendation = this.odprecommendationforshow;
+					}
+					this.startodplabel = 1;
+				}
+			},
+			tampilkanRekomendasiOdp() {
+				var detail = [];	
+				var label, frame, index;
+
+				this.odctext = this.distribution == 'add' ? this.odc_baru.split('-') : this.odc.text;
+				this.distributiontext = this.distribution == 'add' ? this.distribution_baru : this.distribution.text;
+
+				for(var n = 0; n < this.jumlah_odp; n++) {
+					index = ('00'+ (this.startodplabel + n));
+					index = index.substr(index.length - 3);
+					label = 'ODP-'+ this.odctext[1] +'-'+ this.odctext[2] +'/'+ index;
+					frame = this.odctext[2] +'/'+ this.distributiontext +'/'+ index +'.01';
+					detail[n] = ({ number: index, label: label, frame: frame }); 
+				}
+				this.datas = detail;
+			},
+			saveAndFinish() {
+				this.loading = true;
+
+				axios.post('/bookingcontentbooking', {
+					regional: this.regional,
+					witel: this.witel,
+					sto: this.sto,
+					nama_projek: this.nama_projek,
+					mitra: this.mitra,
+					tipe_projek: this.typeproj,
+					nomor_kontrak: this.contract_number,
+					odc: this.odc,
+					odc_baru: this.odc_baru,
+					spek_odc_baru: this.specofodc,
+					distribusi: this.distribution,
+					distribusi_baru: this.distribution_baru,
+					kap_distribusi_baru: this.capacityofdistribution,
+					jumlah_odp: this.jumlah_odp,
+					label_odp_awal: this.startodplabel,
+					label_odp: JSON.stringify(this.datas)
+				})
+				.then(
+					response => {
+						console.log(response.data.data);
+						alert('Projek baru telah disimpan');
+						this.loading = false;
+						this.reset();
+					}
+				)
+				.catch(
+					(error) => console.log(error.message)
+				);
+
+				// console.log('>');
+				// console.log('regional : '+ this.regional);
+				// console.log('witel : '+ this.witel);
+				// console.log('sto : '+ this.sto);
+				// console.log('nama_projek : '+ this.nama_projek);
+				// console.log('mitra : '+ this.mitra);
+				// console.log('tipe projek : '+ this.typeproj);
+				// console.log('nomor kontrak : '+ this.contract_number);
+				// console.log('odc : '+ this.odc);
+				// console.log('odc baru : '+ this.odc_baru);
+				// console.log('spek odc baru : '+ this.specofodc);
+				// console.log('distribusi : '+ this.distribution);
+				// console.log('distribusi baru : '+ this.distribution_baru);
+				// console.log('kap distribusi baru : '+ this.capacityofdistribution);
+				// console.log('jumlah odp : '+ this.jumlah_odp);
+				// console.log('label odp : '+  JSON.stringify(this.datas));
+			},
+			reset() {
+				Object.assign(this.$data, this.$options.data());
+				
+				this.allRegional();
+				this.allMitra();
+				this.allTypes();
+				this.allSpecOfOdc();
 			}
 		},
 		mounted() {

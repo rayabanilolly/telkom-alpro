@@ -17,7 +17,7 @@ class CreateOdfTable extends Migration
             $table->increments('id');
             $table->string('unique', 10)->unique();
             $table->string('name', 50);
-            $table->integer('gpon_id');
+            $table->integer('gpon_id')->default('0');
             $table->integer('regional_id');
             $table->integer('witel_id');
             $table->integer('sto_id');
