@@ -64,4 +64,14 @@ class HomeController extends Controller
     {
         return view('alproodp');
     }
+
+    public function distribusi()
+    {
+        return view('masdistribusi');
+    }
+
+    public function mancore()
+    {
+        return view('mancore');
+    }
 }

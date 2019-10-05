@@ -50,14 +50,19 @@ Vue.use(ClientTable, TableSchema, false, 'bootstrap4')
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-Vue.component('beranda-component', require('./components/BerandaComponent.vue'));
+Vue.component('beranda-component', require('./components/BerandaComponent.vue').default);
 
-Vue.component('projek-component', require('./components/ProjekComponent.vue'));
+Vue.component('projek-component', require('./components/ProjekComponent.vue').default);
+Vue.component('monitoring-component', require('./components/MonitoringComponent.vue').default);
 
-Vue.component('gpon-component', require('./components/GponComponent.vue'));
-Vue.component('odf-component', require('./components/OdfComponent.vue'));
-Vue.component('odc-component', require('./components/OdcComponent.vue'));
-Vue.component('odp-component', require('./components/OdpComponent.vue'));
+Vue.component('gpon-component', require('./components/GponComponent.vue').default);
+Vue.component('odf-component', require('./components/OdfComponent.vue').default);
+Vue.component('odc-component', require('./components/OdcComponent.vue').default);
+Vue.component('odp-component', require('./components/OdpComponent.vue').default);
+
+Vue.component('distribusi-component', require('./components/DistribusiComponent.vue').default);
+
+Vue.component('mancore-component', require('./components/MancoreComponent.vue').default);
 
 const app = new Vue({
     el: '#app'

@@ -11,6 +11,7 @@ use App\sto;
 use App\odcspec;
 use App\distribution;
 use App\odc;
+use App\odp;
 use App\project;
 
 class BookingContent extends Controller
@@ -71,6 +72,31 @@ class BookingContent extends Controller
     	return response()->json(['data' => $data], 200);
     }
 
+    public function odpcountofdistribution($distribution_id)
+    {
+        $odpcount = odp::where('distribution_id', $distribution_id)->count();
+        $distribution = distribution::find($distribution_id)->first();
+        $leftovercores = ($distribution->capacity - $odpcount);
+
+        $data = array(
+                'capacity' => $distribution->capacity,
+                'leftovercores' => $leftovercores
+            );
+
+        return response()->json(['data' => $data], 200);
+    }
+
+    public function odpcountofodc($odc_id)
+    {
+        $latestlabel = odp::where('odc_id', $odc_id)->max('label');
+
+        $data = array(
+            'latestlabel' => $latestlabel
+        );
+
+        return response()->json(['data' => $data, 200]);
+    }
+
     public function booking(Request $request)
     {
         $data['regional'] = $request->regional;
@@ -127,7 +153,8 @@ class BookingContent extends Controller
             $distribusi->unique = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'), 0, 10);
             $distribusi->name = $data['distribusi_baru'];
             $distribusi->shortname = $data['distribusi_baru'];
-            $distribusi->distributions = intval($data['distribusi_baru']);
+            // $distribusi->distributions = intval($data['distribusi_baru']);
+            $distribusi->distributions = intval(preg_replace('/[^0-9]+/', '', $data['distribusi_baru']), 10);
             $distribusi->odc_id = $data['odc'] == 'add' ? $odc->id : $data['odc'];
             $distribusi->capacity = $data['kap_distribusi_baru'];
             $distribusi->save();
@@ -136,12 +163,12 @@ class BookingContent extends Controller
 
         // ODP //
         if($data['jumlah_odp'] != 'tanpaodp'):
-            for($x = 0; $x < $data['jumlah_odp']; $x++)):
+            for($x = 0; $x < $data['jumlah_odp']; $x++):
                 $odp = new odp;
                 $odp->unique = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'), 0, 10);
-                $odp->label = $data['label_odp'][$n]->number;
-                $odp->name = $data['label_odp'][$n]->label;
-                $odp->frame = $data['label_odp'][$n]->frame;
+                $odp->label = $data['label_odp'][$x]->number;
+                $odp->name = $data['label_odp'][$x]->label;
+                $odp->frame = $data['label_odp'][$x]->frame;
                 $odp->odc_id = $data['odc'] == 'add' ? $odc->id : $data['odc'];
                 $odp->distribution_id = $data['distribusi'] == 'add' ? $distribusi->id : $data['distribusi'];
                 $odp->regional_id = $data['regional'];
@@ -154,6 +181,6 @@ class BookingContent extends Controller
         endif;
         // ODP //
 
-        return response()->json(['data' => $data['label_odp'][0]->frame], 200);
+        return response()->json(['data' => $data], 200);
     }
 }

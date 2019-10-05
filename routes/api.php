@@ -31,6 +31,12 @@ Route::get('/bookingcontentodc/{sto_id}', 'BookingContent@odc');
 Route::get('/bookingcontentodcspec', 'BookingContent@odcspec');
 Route::get('/bookingcontentdistribution/{odc_id}', 'BookingContent@distribution');
 Route::post('/bookingcontentbooking', 'BookingContent@booking');
+Route::get('/bookingcontentodpcountofdistribution/{distribution_id}', 'BookingContent@odpcountofdistribution');
+Route::get('/bookingcontentodpcountofodc/{odc_id}', 'BookingContent@odpcountofodc');
+
+Route::get('/monitoringcontentregional', 'BookingContent@regional');
+Route::get('/monitoringcontentwitel/{regional_id}', 'BookingContent@witel');
+Route::get('/monitoringcontentsto/{witel_id}', 'BookingContent@sto');
 
 Route::get('/alprogponcontentregional', 'BookingContent@regional');
 Route::get('/alprogponcontentwitel/{regional_id}', 'BookingContent@witel');
@@ -64,3 +70,17 @@ Route::get('/alproodccontenttypeproj', 'OdcContent@typeproject');
 Route::get('/alproodccontentstatuscons', 'GponContent@statuscons');
 Route::get('/alproodccontentstatusinv', 'GponContent@statusinv');
 Route::get('/alproodccontentmitra', 'BookingContent@mitra');
+
+Route::get('/distributioncontentregional', 'BookingContent@regional');
+Route::get('/distributioncontentwitel/{regional_id}', 'BookingContent@witel');
+Route::get('/distributioncontentsto/{witel_id}', 'BookingContent@sto');
+Route::get('/distributioncontentodc/{sto_id}', 'BookingContent@odc');
+Route::post('/distributioncontentoneodc', 'DistribusiContent@oneodc');
+Route::post('/distributioncontentadd', 'DistribusiContent@add');
+Route::post('/distributioncontentchangeonedistribution', 'DistribusiContent@changeonedistribution');
+Route::post('/distributioncontentchangecapacitydistribution', 'DistribusiContent@changecapacitydistribution');
+
+Route::get('/mancorecontentregional', 'BookingContent@regional');
+Route::get('/mancorecontentwitel/{regional_id}', 'BookingContent@witel');
+Route::get('/mancorecontentsto/{witel_id}', 'BookingContent@sto');
+Route::get('/mancorecontentodc/{sto_id}', 'BookingContent@odc');

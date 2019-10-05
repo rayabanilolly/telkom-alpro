@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<monitoring-component></monitoring-component>
+<distribusi-component></distribusi-component>
 @endsection

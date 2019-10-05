@@ -3,6 +3,8 @@
 use App\mitra;
 use App\gpon;
 use App\gponmerk;
+use App\distribution;
+use App\odc;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,21 +35,26 @@ Route::get('/odf', 'HomeController@odf')->name('odf');
 Route::get('/odc', 'HomeController@odc')->name('odc');
 Route::get('/odp', 'HomeController@odp')->name('odp');
 
+Route::get('/distribusi', 'HomeController@distribusi')->name('distribusi');
+
+Route::get('/mancore', 'HomeController@mancore')->name('mancore');
+
 Route::get('/test', function(){
 	// $gpon = gpon::find(1)->gponmerk->name;
-	// $gpon = gpon::find(1);
-	$gpon = gpon::all();
-	$merk = array(); $i = 0;
-	foreach($gpon as $index):
-		$merk[] = gponmerk::find($index->gponmerk_id)->toArray();
-		$gpon[$i]->merk = $merk[$i];
-		$i++;
-	endforeach;
+	$data = odc::find(2);
+	$data = intval(preg_replace('/[^0-9]+/', '', $data->odcspec->name), 10);
+	// $gpon = gpon::all();
+	// $merk = array(); $i = 0;
+	// foreach($gpon as $index):
+	// 	$merk[] = gponmerk::find($index->gponmerk_id)->toArray();
+	// 	$gpon[$i]->merk = $merk[$i];
+	// 	$i++;
+	// endforeach;
 
 	// $gpon[0]->merk = $merk[0];
 
 	echo '<pre>';
 	// print_r($gpon[0]->merk->name);
-	print_r(json_encode($gpon));
+	print_r($data / 12);
 	echo '</pre>';
 });

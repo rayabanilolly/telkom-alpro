@@ -23,8 +23,10 @@ class CreateOdpTable extends Migration
             $table->integer('odpspec_id')->default(1);
             $table->integer('odc_id');
             $table->integer('distribution_id');
-            $table->integer('panel')->nullable();
-            $table->enum('port', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])->nullable();
+            $table->integer('panel_in')->nullable();
+            $table->enum('port_in', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])->nullable();
+            $table->integer('panel_out')->nullable();
+            $table->enum('port_out', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'])->nullable();
             $table->integer('regional_id');
             $table->integer('witel_id');
             $table->integer('sto_id');

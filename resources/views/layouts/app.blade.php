@@ -151,7 +151,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md">
-                                        <a href="">
+                                        <a href="{{ route('mancore') }}">
                                             <img src="{{ asset('img/webapp/mancore.png') }}">
                                         </a>
                                         <br>Mancore
@@ -225,7 +225,7 @@
                                                     </a><br>GPON Merk
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="#">
+                                                    <a href="{{ route('distribusi') }}">
                                                         <img src="{{ asset('img/webapp/distribusi.png') }}">
                                                     </a><br>Distribusi
                                                 </div>

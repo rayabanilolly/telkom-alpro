@@ -37,7 +37,7 @@
 										<div class="col-md-8">
 											<select class="form-control form-control-sm" id="regional" name="regional" v-model="regional" v-on:change="allWitel()">
 												<option :value="0">Pilih Regional</option>
-												<option :value="regional.id" v-for="regional in regionals">{{ regional.name }}</option>
+												<option :value="regional.id" :key="regional.id" v-for="regional in regionals">{{ regional.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -53,7 +53,7 @@
 										<div class="col-md-8">
 											<select class="form-control form-control-sm" id="witel" name="witel" v-model="witel" v-on:change="allSto()">
 												<option :value="0">Pilih Witel</option>
-												<option :value="witel.id" v-for="witel in witels">{{ witel.name }}</option>
+												<option :value="witel.id" :key="witel.id" v-for="witel in witels">{{ witel.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -69,7 +69,7 @@
 										<div class="col-md-8">
 											<select class="form-control form-control-sm" id="sto" name="sto" v-model="sto">
 												<option :value="0">Pilih STO</option>
-												<option :value="sto.id" v-for="sto in stos">{{ sto.name }}</option>
+												<option :value="sto.id" :key="sto.id" v-for="sto in stos">{{ sto.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -129,7 +129,7 @@
 										<div class="col-md-7">
 											<select class="form-control form-control-sm" id="odcspec" name="odcspec" v-model="odcspec">
 												<option :value="0">Pilih Spesifikasi</option>
-												<option :value="odcspec.id" v-for="odcspec in odcspecs">{{ odcspec.name }}</option>
+												<option :value="odcspec.id" :key="odcspec.id" v-for="odcspec in odcspecs">{{ odcspec.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -158,7 +158,7 @@
 										<div class="col-md-7">
 											<select class="form-control form-control-sm" id="typeproject" name="typeproject" v-model="typeproject">
 												<option :value="0">Pilih Tipe</option>
-												<option :value="typeproject.id" v-for="typeproject in typeprojects">{{ typeproject.name }}</option>
+												<option :value="typeproject.id" :key="typeproject.id" v-for="typeproject in typeprojects">{{ typeproject.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -174,7 +174,7 @@
 										<div class="col-md-7">
 											<select class="form-control form-control-sm" id="mitra" name="mitra" v-model="mitra">
 												<option :value="0">Pilih Mitra</option>
-												<option :value="mitra.id" v-for="mitra in mitras">{{ mitra.name }}</option>
+												<option :value="mitra.id" :key="mitra.id" v-for="mitra in mitras">{{ mitra.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -190,7 +190,7 @@
 										<div class="col-md-7">
 											<select class="form-control form-control-sm" id="statuscons" name="statuscons" v-model="statuscons">
 												<option :value="0">Pilih Status</option>
-												<option :value="statuscons.id" v-for="statuscons in statusconss">{{ statuscons.name }}</option>
+												<option :value="statuscons.id" :key="statuscons.id" v-for="statuscons in statusconss">{{ statuscons.name }}</option>
 											</select>
 										</div>
 									</div>
@@ -206,7 +206,7 @@
 										<div class="col-md-7">
 											<select class="form-control form-control-sm" id="statusinv" name="statusinv" v-model="statusinv" v-on:change="">
 												<option :value="0">Pilih Mitra</option>
-												<option :value="statusinv.id" v-for="statusinv in statusinvs">{{ statusinv.name }}</option>
+												<option :value="statusinv.id" :key="statusinv.id" v-for="statusinv in statusinvs">{{ statusinv.name }}</option>
 											</select>
 										</div>
 									</div>
