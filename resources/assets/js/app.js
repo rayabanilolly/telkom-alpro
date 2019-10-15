@@ -26,7 +26,7 @@ Vue.use(VueRouter)
 // konfigurasi axios default url
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://sisdi.local/api';
+axios.defaults.baseURL = 'http://localhost:8000/api';
 // konfigurasi axios default url
 
 // import vue-tables-2
@@ -60,6 +60,16 @@ Vue.component('odf-component', require('./components/OdfComponent.vue').default)
 Vue.component('odc-component', require('./components/OdcComponent.vue').default);
 Vue.component('odp-component', require('./components/OdpComponent.vue').default);
 
+// Master Component
+Vue.component('regional-component', require('./components/RegionalComponent.vue').default);
+Vue.component('witel-component', require('./components/WitelComponent.vue').default);
+Vue.component('sto-component', require('./components/StoComponent.vue').default);
+Vue.component('statusproj-component', require('./components/StatusProjectComponent.vue').default);
+Vue.component('statuscons-component', require('./components/StatusConsComponent.vue').default);
+Vue.component('statusinventory-component', require('./components/StatusInventoryComponent.vue').default);
+Vue.component('odcspek-component', require('./components/OdcSpekComponent.vue').default);
+Vue.component('odpspek-component', require('./components/OdpSpekComponent.vue').default);
+Vue.component('gponmerk-component', require('./components/GponMerkComponent.vue').default);
 Vue.component('distribusi-component', require('./components/DistribusiComponent.vue').default);
 
 Vue.component('mancore-component', require('./components/MancoreComponent.vue').default);

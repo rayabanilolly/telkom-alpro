@@ -176,51 +176,51 @@
                                         <div id="popover_master" class="popover" style="display: none;">
                                             <div class="row" style="text-align: center !important;">
                                                 <div class="col-md">
-                                                    <a href="#">
+                                                    <a href="{{ route('regional') }}">
                                                         <img src="{{ asset('img/webapp/regional.png') }}">
                                                     </a><br>Regional
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('witel') }}">
                                                         <img src="{{ asset('img/webapp/witel.png') }}">
                                                     </a><br>Witel
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('sto') }}">
                                                         <img src="{{ asset('img/webapp/sto.png') }}">
                                                     </a><br>STO
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('status-project') }}">
                                                         <img src="{{ asset('img/webapp/status_projek.png') }}">
                                                     </a><br>Status Projek
                                                 </div>
                                             </div>
                                             <div class="row" style="text-align: center !important;">
                                                 <div class="col-md">
-                                                    <a href="#">
+                                                    <a href="{{ route('status-cons') }}">
                                                         <img src="{{ asset('img/webapp/status_cons.png') }}">
                                                     </a><br>Status Cons
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('status-inventory') }}">
                                                         <img src="{{ asset('img/webapp/status_inventori.png') }}">
                                                     </a><br>Status Inv
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('odc-spek') }}">
                                                         <img src="{{ asset('img/webapp/odc_spek.png') }}">
                                                     </a><br>ODC Spek
                                                 </div>
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('odp-spek') }}">
                                                         <img src="{{ asset('img/webapp/odp_spek.png') }}">
                                                     </a><br>ODP Spek
                                                 </div>
                                             </div>
                                             <div class="row" style="text-align: center !important;">
                                                 <div class="col-md">
-                                                    <a href="">
+                                                    <a href="{{ route('gpon-merk') }}">
                                                         <img src="{{ asset('img/webapp/gpon_merk.png') }}">
                                                     </a><br>GPON Merk
                                                 </div>

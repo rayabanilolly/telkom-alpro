@@ -65,13 +65,59 @@ class HomeController extends Controller
         return view('alproodp');
     }
 
-    public function distribusi()
-    {
-        return view('masdistribusi');
-    }
-
     public function mancore()
     {
         return view('mancore');
+    }
+
+    // Master Menu
+    public function regional()
+    {
+        return view('masregional');
+    }
+
+    public function witel()
+    {
+        return view('maswitel');
+    }
+
+    public function sto()
+    {
+        return view('massto');
+    }
+
+    public function statusCons()
+    {
+        return view('masstatuscons');
+    }
+
+    public function statusInventory()
+    {
+        return view('masstatusinventory');
+    }
+
+    public function statusProject()
+    {
+        return view('masstatusproject');
+    }
+
+    public function odcSpek()
+    {
+        return view('masodcspek');
+    }
+
+    public function odpSpek()
+    {
+        return view('masodpspek');
+    }
+
+    public function gponMerk()
+    {
+        return view('masgponmerk');
+    }
+
+    public function distribusi()
+    {
+        return view('masdistribusi');
     }
 }

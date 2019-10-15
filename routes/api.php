@@ -84,3 +84,48 @@ Route::get('/mancorecontentregional', 'BookingContent@regional');
 Route::get('/mancorecontentwitel/{regional_id}', 'BookingContent@witel');
 Route::get('/mancorecontentsto/{witel_id}', 'BookingContent@sto');
 Route::get('/mancorecontentodc/{sto_id}', 'BookingContent@odc');
+
+// Master Regional
+Route::get('/regional-delete/{id}', 'RegionalController@delete');
+Route::get('/regional-get', 'RegionalController@index');
+Route::post('/regional-save', 'RegionalController@save');
+
+// Master Witel
+Route::get('/witel-delete/{id}', 'WitelController@delete');
+Route::get('/witel-get', 'WitelController@index');
+Route::post('/witel-save', 'WitelController@save');
+
+// Master Witel
+Route::get('/sto-delete/{id}', 'StoController@delete');
+Route::get('/sto-get', 'StoController@index');
+Route::post('/sto-save', 'StoController@save');
+
+// Master Status Cons
+Route::get('/status-cons-delete/{id}', 'StatusConsController@delete');
+Route::get('/status-cons-get', 'StatusConsController@index');
+Route::post('/status-cons-save', 'StatusConsController@save');
+
+// Master Status Inventory
+Route::get('/status-inventory-delete/{id}', 'StatusInventoryController@delete');
+Route::get('/status-inventory-get', 'StatusInventoryController@index');
+Route::post('/status-inventory-save', 'StatusInventoryController@save');
+
+// Master Status Project
+Route::get('/status-project-delete/{id}', 'StatusProjectController@delete');
+Route::get('/status-project-get', 'StatusProjectController@index');
+Route::post('/status-project-save', 'StatusProjectController@save');
+
+// Master ODC Spek
+Route::get('/odc-spek-delete/{id}', 'OdcSpekController@delete');
+Route::get('/odc-spek-get', 'OdcSpekController@index');
+Route::post('/odc-spek-save', 'OdcSpekController@save');
+
+// Master ODP Spek
+Route::get('/odp-spek-delete/{id}', 'OdpSpekController@delete');
+Route::get('/odp-spek-get', 'OdpSpekController@index');
+Route::post('/odp-spek-save', 'OdpSpekController@save');
+
+// Master ODP Spek
+Route::get('/gpon-merk-delete/{id}', 'GponMerkController@delete');
+Route::get('/gpon-merk-get', 'GponMerkController@index');
+Route::post('/gpon-merk-save', 'GponMerkController@save');

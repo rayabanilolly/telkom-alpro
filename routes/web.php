@@ -35,6 +35,15 @@ Route::get('/odf', 'HomeController@odf')->name('odf');
 Route::get('/odc', 'HomeController@odc')->name('odc');
 Route::get('/odp', 'HomeController@odp')->name('odp');
 
+Route::get('/regional', 'HomeController@regional')->name('regional');
+Route::get('/witel', 'HomeController@witel')->name('witel');
+Route::get('/sto', 'HomeController@sto')->name('sto');
+Route::get('/status-project', 'HomeController@statusProject')->name('status-project');
+Route::get('/status-cons', 'HomeController@statusCons')->name('status-cons');
+Route::get('/status-inventory', 'HomeController@statusInventory')->name('status-inventory');
+Route::get('/odc-spek', 'HomeController@odcSpek')->name('odc-spek');
+Route::get('/odp-spek', 'HomeController@odpSpek')->name('odp-spek');
+Route::get('/gpon-merk', 'HomeController@gponMerk')->name('gpon-merk');
 Route::get('/distribusi', 'HomeController@distribusi')->name('distribusi');
 
 Route::get('/mancore', 'HomeController@mancore')->name('mancore');
