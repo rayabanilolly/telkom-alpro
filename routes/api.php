@@ -70,6 +70,7 @@ Route::get('/alproodccontenttypeproj', 'OdcContent@typeproject');
 Route::get('/alproodccontentstatuscons', 'GponContent@statuscons');
 Route::get('/alproodccontentstatusinv', 'GponContent@statusinv');
 Route::get('/alproodccontentmitra', 'BookingContent@mitra');
+Route::get('/alproodccontentodcshow/{odc_id}', 'OdcContent@odcshow');
 
 Route::get('/distributioncontentregional', 'BookingContent@regional');
 Route::get('/distributioncontentwitel/{regional_id}', 'BookingContent@witel');

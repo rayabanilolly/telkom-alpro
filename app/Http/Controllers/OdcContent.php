@@ -11,7 +11,9 @@ class OdcContent extends Controller
 {
     public function odc(Request $request)
     {
-    	$data = odc::where('sto_id', $request->sto)->get();
+    	$data = odc::where('sto_id', $request->sto)
+                    ->with('odcspec', 'project', 'mitra')
+                    ->get();
 
     	return response()->json(['data' => $data], 200);
     }
@@ -21,6 +23,13 @@ class OdcContent extends Controller
     	$data = odcspec::all();
 
     	return response()->json(['data' => $data], 200);
+    }
+
+    public function odcshow($id)
+    {
+        $data = odc::find($id);
+
+        return response()->json(['data' => $data], 200);
     }
 
     public function typeproject()

@@ -5507,8 +5507,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6334,6 +6332,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+var _methods;
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //
@@ -6597,18 +6597,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       name: '',
       address: '',
       lokasi: '',
-      columns: ['name', 'spesifikasi', 'projek', 'mitra', 'opsi'],
+      columns: ['name', 'odcspec.name', 'project.name', 'mitra.name', 'opsi'],
       small: true,
       options: {
         headings: {
           name: 'Nama',
-          spesifikasi: 'Spesifikasi',
-          projek: 'Projek',
-          mitra: 'Mitra',
+          'odcspec.name': 'Spesifikasi',
+          'project.name': 'Projek',
+          'mitra.name': 'Mitra',
           opsi: 'opsi'
         },
-        sortable: ['name', 'spesifikasi', 'projek', 'mitra '],
-        filterable: ['name', 'spesifikasi', 'projek', 'mitra'],
+        sortable: ['name', 'odcspec.name', 'project.name', 'mitra.name'],
+        filterable: ['name', 'odcspec.name', 'project.name', 'mitra.name'],
         pagination: {
           chunk: 10,
           dropdown: false
@@ -6616,7 +6616,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     };
   },
-  methods: _defineProperty({
+  methods: (_methods = {
     allRegional: function allRegional() {
       var _this = this;
 
@@ -6710,7 +6710,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return console.log(error.message);
       });
     }
-  }, "allMitra", function allMitra() {
+  }, _defineProperty(_methods, "allMitra", function allMitra() {
     var _this10 = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/alproodccontentmitra').then(function (response) {
@@ -6718,7 +6718,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }).catch(function (error) {
       return console.log(error.message);
     });
-  }),
+  }), _defineProperty(_methods, "showOdc", function showOdc(id) {
+    var _this11 = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/alproodccontentodcshow/' + id).then(function (response) {
+      _this11.odc = response.data.data;
+    }).catch(function (error) {
+      return console.log(error.message);
+    });
+  }), _methods),
   mounted: function mounted() {
     console.log('Component mounted.');
     this.allRegional();
@@ -53534,466 +53542,445 @@ var render = function() {
               _vm._m(10),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c(
-                  "form",
-                  {
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.addGpon($event)
-                      }
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.typeform,
+                      expression: "typeform"
                     }
-                  },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.typeform,
-                          expression: "typeform"
-                        }
-                      ],
-                      attrs: {
-                        type: "hidden",
-                        id: "typeform",
-                        name: "typeform"
-                      },
-                      domProps: { value: _vm.typeform },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.typeform = $event.target.value
-                        }
+                  ],
+                  attrs: { type: "hidden", id: "typeform", name: "typeform" },
+                  domProps: { value: _vm.typeform },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    }),
+                      _vm.typeform = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(11),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(11),
-                        _vm._v(" "),
-                        _vm._m(12),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.name,
-                                expression: "name"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Nama Gpon",
-                              name: "name",
-                              id: "name"
-                            },
-                            domProps: { value: _vm.name },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.name = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
+                    _vm._m(12),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(13),
-                        _vm._v(" "),
-                        _vm._m(14),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.address,
-                                expression: "address"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Address",
-                              name: "address",
-                              id: "address"
-                            },
-                            domProps: { value: _vm.address },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.address = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(15),
-                        _vm._v(" "),
-                        _vm._m(16),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.gponmerk,
-                                  expression: "gponmerk"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "gponmerk", name: "gponmerk" },
-                              on: {
-                                change: [
-                                  function($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call($event.target.options, function(o) {
-                                        return o.selected
-                                      })
-                                      .map(function(o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.gponmerk = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  },
-                                  function($event) {}
-                                ]
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Merk")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.gponmerks, function(gponmerk) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: gponmerk.id,
-                                    domProps: { value: gponmerk.id }
-                                  },
-                                  [_vm._v(_vm._s(gponmerk.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(17),
-                        _vm._v(" "),
-                        _vm._m(18),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.mitra,
-                                  expression: "mitra"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "mitra", name: "mitra" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.mitra = $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Mitra")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.mitras, function(mitra) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: mitra.id,
-                                    domProps: { value: mitra.id }
-                                  },
-                                  [_vm._v(_vm._s(mitra.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(19),
-                        _vm._v(" "),
-                        _vm._m(20),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.statuscons,
-                                  expression: "statuscons"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "statuscons", name: "statuscons" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.statuscons = $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Status")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.statusconss, function(statuscons) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: statuscons.id,
-                                    domProps: { value: statuscons.id }
-                                  },
-                                  [_vm._v(_vm._s(statuscons.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(21),
-                        _vm._v(" "),
-                        _vm._m(22),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.statusinv,
-                                  expression: "statusinv"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "statusinv", name: "statusinv" },
-                              on: {
-                                change: [
-                                  function($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call($event.target.options, function(o) {
-                                        return o.selected
-                                      })
-                                      .map(function(o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.statusinv = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  },
-                                  function($event) {}
-                                ]
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Mitra")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.statusinvs, function(statusinv) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: statusinv.id,
-                                    domProps: { value: statusinv.id }
-                                  },
-                                  [_vm._v(_vm._s(statusinv.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(23),
-                        _vm._v(" "),
-                        _vm._m(24),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.lokasi,
-                                expression: "lokasi"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Lokasi",
-                              name: "lokasi",
-                              id: "lokasi"
-                            },
-                            domProps: { value: _vm.lokasi },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.lokasi = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c(
-                          "div",
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
                           {
-                            staticClass: "col-md",
-                            staticStyle: { "text-align": "right" }
-                          },
-                          [
-                            _vm.typeform === "edit"
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-success btn-sm",
-                                    attrs: { type: "button" },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.editGpon()
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v("Simpan  "),
-                                    _c("i", { staticClass: "fas fa-save" })
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _vm.typeform === "add"
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-primary btn-sm",
-                                    attrs: { type: "submit" }
-                                  },
-                                  [
-                                    _vm._v("Tambah  "),
-                                    _c("i", {
-                                      staticClass: "fas fa-plus-circle"
-                                    })
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c(
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.name,
+                            expression: "name"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Nama Gpon",
+                          name: "name",
+                          id: "name"
+                        },
+                        domProps: { value: _vm.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.name = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(13),
+                    _vm._v(" "),
+                    _vm._m(14),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.address,
+                            expression: "address"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Address",
+                          name: "address",
+                          id: "address"
+                        },
+                        domProps: { value: _vm.address },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.address = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(15),
+                    _vm._v(" "),
+                    _vm._m(16),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.gponmerk,
+                              expression: "gponmerk"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "gponmerk", name: "gponmerk" },
+                          on: {
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.gponmerk = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              function($event) {}
+                            ]
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Merk")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.gponmerks, function(gponmerk) {
+                            return _c(
+                              "option",
+                              {
+                                key: gponmerk.id,
+                                domProps: { value: gponmerk.id }
+                              },
+                              [_vm._v(_vm._s(gponmerk.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(17),
+                    _vm._v(" "),
+                    _vm._m(18),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.mitra,
+                              expression: "mitra"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "mitra", name: "mitra" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.mitra = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Mitra")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.mitras, function(mitra) {
+                            return _c(
+                              "option",
+                              { key: mitra.id, domProps: { value: mitra.id } },
+                              [_vm._v(_vm._s(mitra.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(19),
+                    _vm._v(" "),
+                    _vm._m(20),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.statuscons,
+                              expression: "statuscons"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "statuscons", name: "statuscons" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.statuscons = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Status")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.statusconss, function(statuscons) {
+                            return _c(
+                              "option",
+                              {
+                                key: statuscons.id,
+                                domProps: { value: statuscons.id }
+                              },
+                              [_vm._v(_vm._s(statuscons.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(21),
+                    _vm._v(" "),
+                    _vm._m(22),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.statusinv,
+                              expression: "statusinv"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "statusinv", name: "statusinv" },
+                          on: {
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.statusinv = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              function($event) {}
+                            ]
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Mitra")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.statusinvs, function(statusinv) {
+                            return _c(
+                              "option",
+                              {
+                                key: statusinv.id,
+                                domProps: { value: statusinv.id }
+                              },
+                              [_vm._v(_vm._s(statusinv.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(23),
+                    _vm._v(" "),
+                    _vm._m(24),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.lokasi,
+                            expression: "lokasi"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Lokasi",
+                          name: "lokasi",
+                          id: "lokasi"
+                        },
+                        domProps: { value: _vm.lokasi },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.lokasi = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md",
+                        staticStyle: { "text-align": "right" }
+                      },
+                      [
+                        _vm.typeform === "edit"
+                          ? _c(
                               "button",
                               {
-                                staticClass: "btn btn-danger btn-sm",
+                                staticClass: "btn btn-success btn-sm",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function($event) {
-                                    _vm.formgponshow = false
-                                    _vm.reset()
+                                    _vm.editGpon()
                                   }
                                 }
                               },
                               [
-                                _vm._v("Batal  "),
-                                _c("i", { staticClass: "fas fa-ban" })
+                                _vm._v("Simpan  "),
+                                _c("i", { staticClass: "fas fa-save" })
                               ]
                             )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.typeform === "add"
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-primary btn-sm",
+                                attrs: { type: "submit" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.addGpon()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v("Tambah  "),
+                                _c("i", { staticClass: "fas fa-plus-circle" })
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-danger btn-sm",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.formgponshow = false
+                                _vm.reset()
+                              }
+                            }
+                          },
+                          [
+                            _vm._v("Batal  "),
+                            _c("i", { staticClass: "fas fa-ban" })
                           ]
                         )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _vm.typeform === "edit"
-                      ? _c("div", { staticClass: "form-group" }, [_vm._m(25)])
-                      : _vm._e()
-                  ]
-                )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm.typeform === "edit"
+                  ? _c("div", { staticClass: "form-group" }, [_vm._m(25)])
+                  : _vm._e()
               ])
             ])
           ]
@@ -55775,7 +55762,7 @@ var render = function() {
                                           click: function($event) {
                                             _vm.formodcshow = true
                                             _vm.typeform = "edit"
-                                            _vm.showOdf(row.id)
+                                            _vm.showOdc(row.id)
                                           }
                                         }
                                       },
@@ -55817,443 +55804,437 @@ var render = function() {
               _vm._m(10),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c("form", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.typeform,
-                        expression: "typeform"
-                      }
-                    ],
-                    attrs: { type: "hidden", id: "typeform", name: "typeform" },
-                    domProps: { value: _vm.typeform },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.typeform = $event.target.value
-                      }
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.typeform,
+                      expression: "typeform"
                     }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(11),
-                      _vm._v(" "),
-                      _vm._m(12),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.name,
-                              expression: "name"
-                            }
-                          ],
-                          staticClass: "form-control form-control-sm",
-                          attrs: {
-                            type: "text",
-                            placeholder: "Nama Odc",
-                            name: "name",
-                            id: "name"
-                          },
-                          domProps: { value: _vm.name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.name = $event.target.value
-                            }
+                  ],
+                  attrs: { type: "hidden", id: "typeform", name: "typeform" },
+                  domProps: { value: _vm.typeform },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.typeform = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(11),
+                    _vm._v(" "),
+                    _vm._m(12),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.name,
+                            expression: "name"
                           }
-                        })
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(13),
-                      _vm._v(" "),
-                      _vm._m(14),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.odcspec,
-                                expression: "odcspec"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: { id: "odcspec", name: "odcspec" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.odcspec = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Nama Odc",
+                          name: "name",
+                          id: "name"
+                        },
+                        domProps: { value: _vm.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
                             }
-                          },
-                          [
-                            _c("option", { domProps: { value: 0 } }, [
-                              _vm._v("Pilih Spesifikasi")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.odcspecs, function(odcspec) {
-                              return _c(
-                                "option",
-                                {
-                                  key: odcspec.id,
-                                  domProps: { value: odcspec.id }
-                                },
-                                [_vm._v(_vm._s(odcspec.name))]
-                              )
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(15),
-                      _vm._v(" "),
-                      _vm._m(16),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.projek,
-                              expression: "projek"
-                            }
-                          ],
-                          staticClass: "form-control form-control-sm",
-                          attrs: {
-                            type: "text",
-                            placeholder: "Nama Projek",
-                            name: "projek",
-                            id: "projek"
-                          },
-                          domProps: { value: _vm.projek },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.projek = $event.target.value
-                            }
+                            _vm.name = $event.target.value
                           }
-                        })
-                      ])
+                        }
+                      })
                     ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(17),
-                      _vm._v(" "),
-                      _vm._m(18),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.typeproject,
-                                expression: "typeproject"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: { id: "typeproject", name: "typeproject" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.typeproject = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { domProps: { value: 0 } }, [
-                              _vm._v("Pilih Tipe")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.typeprojects, function(typeproject) {
-                              return _c(
-                                "option",
-                                {
-                                  key: typeproject.id,
-                                  domProps: { value: typeproject.id }
-                                },
-                                [_vm._v(_vm._s(typeproject.name))]
-                              )
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(19),
-                      _vm._v(" "),
-                      _vm._m(20),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.mitra,
-                                expression: "mitra"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: { id: "mitra", name: "mitra" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.mitra = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { domProps: { value: 0 } }, [
-                              _vm._v("Pilih Mitra")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.mitras, function(mitra) {
-                              return _c(
-                                "option",
-                                {
-                                  key: mitra.id,
-                                  domProps: { value: mitra.id }
-                                },
-                                [_vm._v(_vm._s(mitra.name))]
-                              )
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(21),
-                      _vm._v(" "),
-                      _vm._m(22),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.statuscons,
-                                expression: "statuscons"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: { id: "statuscons", name: "statuscons" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.statuscons = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c("option", { domProps: { value: 0 } }, [
-                              _vm._v("Pilih Status")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.statusconss, function(statuscons) {
-                              return _c(
-                                "option",
-                                {
-                                  key: statuscons.id,
-                                  domProps: { value: statuscons.id }
-                                },
-                                [_vm._v(_vm._s(statuscons.name))]
-                              )
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(23),
-                      _vm._v(" "),
-                      _vm._m(24),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-7" }, [
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.statusinv,
-                                expression: "statusinv"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: { id: "statusinv", name: "statusinv" },
-                            on: {
-                              change: [
-                                function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.statusinv = $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                },
-                                function($event) {}
-                              ]
-                            }
-                          },
-                          [
-                            _c("option", { domProps: { value: 0 } }, [
-                              _vm._v("Pilih Mitra")
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(_vm.statusinvs, function(statusinv) {
-                              return _c(
-                                "option",
-                                {
-                                  key: statusinv.id,
-                                  domProps: { value: statusinv.id }
-                                },
-                                [_vm._v(_vm._s(statusinv.name))]
-                              )
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "row" }, [
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(13),
+                    _vm._v(" "),
+                    _vm._m(14),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
                       _c(
-                        "div",
+                        "select",
                         {
-                          staticClass: "col-md",
-                          staticStyle: { "text-align": "right" }
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.odcspec,
+                              expression: "odcspec"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "odcspec", name: "odcspec" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.odcspec = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
                         },
                         [
-                          _vm.typeform === "edit"
-                            ? _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-success btn-sm",
-                                  attrs: { type: "button" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.editOdc()
-                                    }
-                                  }
-                                },
-                                [
-                                  _vm._v("Simpan  "),
-                                  _c("i", { staticClass: "fas fa-save" })
-                                ]
-                              )
-                            : _vm._e(),
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Spesifikasi")
+                          ]),
                           _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-danger btn-sm",
-                              attrs: { type: "button" },
-                              on: {
-                                click: function($event) {
-                                  _vm.formodcshow = false
-                                }
-                              }
-                            },
-                            [
-                              _vm._v("Batal  "),
-                              _c("i", { staticClass: "fas fa-ban" })
-                            ]
-                          )
-                        ]
+                          _vm._l(_vm.odcspecs, function(odcspec) {
+                            return _c(
+                              "option",
+                              {
+                                key: odcspec.id,
+                                domProps: { value: odcspec.id }
+                              },
+                              [_vm._v(_vm._s(odcspec.name))]
+                            )
+                          })
+                        ],
+                        2
                       )
                     ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(15),
+                    _vm._v(" "),
+                    _vm._m(16),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.projek,
+                            expression: "projek"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Nama Projek",
+                          name: "projek",
+                          id: "projek"
+                        },
+                        domProps: { value: _vm.projek },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.projek = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(17),
+                    _vm._v(" "),
+                    _vm._m(18),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.typeproject,
+                              expression: "typeproject"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "typeproject", name: "typeproject" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.typeproject = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Tipe")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.typeprojects, function(typeproject) {
+                            return _c(
+                              "option",
+                              {
+                                key: typeproject.id,
+                                domProps: { value: typeproject.id }
+                              },
+                              [_vm._v(_vm._s(typeproject.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(19),
+                    _vm._v(" "),
+                    _vm._m(20),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.mitra,
+                              expression: "mitra"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "mitra", name: "mitra" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.mitra = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Mitra")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.mitras, function(mitra) {
+                            return _c(
+                              "option",
+                              { key: mitra.id, domProps: { value: mitra.id } },
+                              [_vm._v(_vm._s(mitra.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(21),
+                    _vm._v(" "),
+                    _vm._m(22),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.statuscons,
+                              expression: "statuscons"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "statuscons", name: "statuscons" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.statuscons = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Status")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.statusconss, function(statuscons) {
+                            return _c(
+                              "option",
+                              {
+                                key: statuscons.id,
+                                domProps: { value: statuscons.id }
+                              },
+                              [_vm._v(_vm._s(statuscons.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(23),
+                    _vm._v(" "),
+                    _vm._m(24),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.statusinv,
+                              expression: "statusinv"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "statusinv", name: "statusinv" },
+                          on: {
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.statusinv = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              function($event) {}
+                            ]
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Mitra")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.statusinvs, function(statusinv) {
+                            return _c(
+                              "option",
+                              {
+                                key: statusinv.id,
+                                domProps: { value: statusinv.id }
+                              },
+                              [_vm._v(_vm._s(statusinv.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md",
+                        staticStyle: { "text-align": "right" }
+                      },
+                      [
+                        _vm.typeform === "edit"
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-success btn-sm",
+                                attrs: { type: "button" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.editOdc()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v("Simpan  "),
+                                _c("i", { staticClass: "fas fa-save" })
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-danger btn-sm",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.formodcshow = false
+                              }
+                            }
+                          },
+                          [
+                            _vm._v("Batal  "),
+                            _c("i", { staticClass: "fas fa-ban" })
+                          ]
+                        )
+                      ]
+                    )
                   ])
                 ])
               ])
@@ -57078,367 +57059,347 @@ var render = function() {
               _vm._m(10),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c(
-                  "form",
-                  {
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.addOdf($event)
-                      }
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.typeform,
+                      expression: "typeform"
                     }
-                  },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.typeform,
-                          expression: "typeform"
-                        }
-                      ],
-                      attrs: {
-                        type: "hidden",
-                        id: "typeform",
-                        name: "typeform"
-                      },
-                      domProps: { value: _vm.typeform },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.typeform = $event.target.value
-                        }
+                  ],
+                  attrs: { type: "hidden", id: "typeform", name: "typeform" },
+                  domProps: { value: _vm.typeform },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    }),
+                      _vm.typeform = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(11),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(11),
-                        _vm._v(" "),
-                        _vm._m(12),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.name,
-                                expression: "name"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Nama Odf",
-                              name: "name",
-                              id: "name"
-                            },
-                            domProps: { value: _vm.name },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.name = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
+                    _vm._m(12),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(13),
-                        _vm._v(" "),
-                        _vm._m(14),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.mitra,
-                                  expression: "mitra"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "mitra", name: "mitra" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.mitra = $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Mitra")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.mitras, function(mitra) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: mitra.id,
-                                    domProps: { value: mitra.id }
-                                  },
-                                  [_vm._v(_vm._s(mitra.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(15),
-                        _vm._v(" "),
-                        _vm._m(16),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.statuscons,
-                                  expression: "statuscons"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "statuscons", name: "statuscons" },
-                              on: {
-                                change: function($event) {
-                                  var $$selectedVal = Array.prototype.filter
-                                    .call($event.target.options, function(o) {
-                                      return o.selected
-                                    })
-                                    .map(function(o) {
-                                      var val =
-                                        "_value" in o ? o._value : o.value
-                                      return val
-                                    })
-                                  _vm.statuscons = $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                }
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Status")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.statusconss, function(statuscons) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: statuscons.id,
-                                    domProps: { value: statuscons.id }
-                                  },
-                                  [_vm._v(_vm._s(statuscons.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(17),
-                        _vm._v(" "),
-                        _vm._m(18),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c(
-                            "select",
-                            {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.statusinv,
-                                  expression: "statusinv"
-                                }
-                              ],
-                              staticClass: "form-control form-control-sm",
-                              attrs: { id: "statusinv", name: "statusinv" },
-                              on: {
-                                change: [
-                                  function($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call($event.target.options, function(o) {
-                                        return o.selected
-                                      })
-                                      .map(function(o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.statusinv = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  },
-                                  function($event) {}
-                                ]
-                              }
-                            },
-                            [
-                              _c("option", { domProps: { value: 0 } }, [
-                                _vm._v("Pilih Mitra")
-                              ]),
-                              _vm._v(" "),
-                              _vm._l(_vm.statusinvs, function(statusinv) {
-                                return _c(
-                                  "option",
-                                  {
-                                    key: statusinv.id,
-                                    domProps: { value: statusinv.id }
-                                  },
-                                  [_vm._v(_vm._s(statusinv.name))]
-                                )
-                              })
-                            ],
-                            2
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _vm._m(19),
-                        _vm._v(" "),
-                        _vm._m(20),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-7" }, [
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.lokasi,
-                                expression: "lokasi"
-                              }
-                            ],
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Lokasi",
-                              name: "lokasi",
-                              id: "lokasi"
-                            },
-                            domProps: { value: _vm.lokasi },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.lokasi = $event.target.value
-                              }
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c(
-                          "div",
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
                           {
-                            staticClass: "col-md",
-                            staticStyle: { "text-align": "right" }
-                          },
-                          [
-                            _vm.typeform === "edit"
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-success btn-sm",
-                                    attrs: { type: "button" },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.editOdf()
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v("Simpan  "),
-                                    _c("i", { staticClass: "fas fa-save" })
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _vm.typeform === "add"
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-primary btn-sm",
-                                    attrs: { type: "submit" }
-                                  },
-                                  [
-                                    _vm._v("Tambah  "),
-                                    _c("i", {
-                                      staticClass: "fas fa-plus-circle"
-                                    })
-                                  ]
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c(
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.name,
+                            expression: "name"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Nama Odf",
+                          name: "name",
+                          id: "name"
+                        },
+                        domProps: { value: _vm.name },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.name = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(13),
+                    _vm._v(" "),
+                    _vm._m(14),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.mitra,
+                              expression: "mitra"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "mitra", name: "mitra" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.mitra = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Mitra")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.mitras, function(mitra) {
+                            return _c(
+                              "option",
+                              { key: mitra.id, domProps: { value: mitra.id } },
+                              [_vm._v(_vm._s(mitra.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(15),
+                    _vm._v(" "),
+                    _vm._m(16),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.statuscons,
+                              expression: "statuscons"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "statuscons", name: "statuscons" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.statuscons = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Status")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.statusconss, function(statuscons) {
+                            return _c(
+                              "option",
+                              {
+                                key: statuscons.id,
+                                domProps: { value: statuscons.id }
+                              },
+                              [_vm._v(_vm._s(statuscons.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(17),
+                    _vm._v(" "),
+                    _vm._m(18),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.statusinv,
+                              expression: "statusinv"
+                            }
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          attrs: { id: "statusinv", name: "statusinv" },
+                          on: {
+                            change: [
+                              function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.statusinv = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              },
+                              function($event) {}
+                            ]
+                          }
+                        },
+                        [
+                          _c("option", { domProps: { value: 0 } }, [
+                            _vm._v("Pilih Mitra")
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.statusinvs, function(statusinv) {
+                            return _c(
+                              "option",
+                              {
+                                key: statusinv.id,
+                                domProps: { value: statusinv.id }
+                              },
+                              [_vm._v(_vm._s(statusinv.name))]
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _vm._m(19),
+                    _vm._v(" "),
+                    _vm._m(20),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.lokasi,
+                            expression: "lokasi"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Lokasi",
+                          name: "lokasi",
+                          id: "lokasi"
+                        },
+                        domProps: { value: _vm.lokasi },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.lokasi = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "col-md",
+                        staticStyle: { "text-align": "right" }
+                      },
+                      [
+                        _vm.typeform === "edit"
+                          ? _c(
                               "button",
                               {
-                                staticClass: "btn btn-danger btn-sm",
+                                staticClass: "btn btn-success btn-sm",
                                 attrs: { type: "button" },
                                 on: {
                                   click: function($event) {
-                                    _vm.formodfshow = false
-                                    _vm.reset()
+                                    _vm.editOdf()
                                   }
                                 }
                               },
                               [
-                                _vm._v("Batal  "),
-                                _c("i", { staticClass: "fas fa-ban" })
+                                _vm._v("Simpan  "),
+                                _c("i", { staticClass: "fas fa-save" })
                               ]
                             )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.typeform === "add"
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-primary btn-sm",
+                                attrs: { type: "submit" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.addOdf()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v("Tambah  "),
+                                _c("i", { staticClass: "fas fa-plus-circle" })
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-danger btn-sm",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.formodfshow = false
+                                _vm.reset()
+                              }
+                            }
+                          },
+                          [
+                            _vm._v("Batal  "),
+                            _c("i", { staticClass: "fas fa-ban" })
                           ]
                         )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _vm.typeform === "edit"
-                      ? _c("div", { staticClass: "form-group" }, [_vm._m(21)])
-                      : _vm._e()
-                  ]
-                )
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm.typeform === "edit"
+                  ? _c("div", { staticClass: "form-group" }, [_vm._m(21)])
+                  : _vm._e()
               ])
             ])
           ]

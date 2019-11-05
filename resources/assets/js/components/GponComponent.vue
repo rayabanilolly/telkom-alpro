@@ -112,134 +112,132 @@
 					<div class="card border-danger">
 						<div class="card-header"><b><i>Form Gpon</i></b></div>
 						<div class="card-body">
-							<form @submit.prevent="addGpon">
-								<input type="hidden" id="typeform" name="typeform" v-model="typeform">
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="gpon">Nama Gpon</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<input type="text" class="form-control form-control-sm" placeholder="Nama Gpon" name="name" id="name" v-model="name">
-										</div>
+							<input type="hidden" id="typeform" name="typeform" v-model="typeform">
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="gpon">Nama Gpon</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<input type="text" class="form-control form-control-sm" placeholder="Nama Gpon" name="name" id="name" v-model="name">
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="address">Address</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<input type="text" class="form-control form-control-sm" placeholder="Address" name="address" id="address" v-model="address">
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="address">Address</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<input type="text" class="form-control form-control-sm" placeholder="Address" name="address" id="address" v-model="address">
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="gponmerk">Merk</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="gponmerk" name="gponmerk" v-model="gponmerk" v-on:change="">
-												<option :value="0">Pilih Merk</option>
-												<option :value="gponmerk.id" :key="gponmerk.id" v-for="gponmerk in gponmerks">{{ gponmerk.name }}</option>
-											</select>
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="gponmerk">Merk</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<select class="form-control form-control-sm" id="gponmerk" name="gponmerk" v-model="gponmerk" v-on:change="">
+											<option :value="0">Pilih Merk</option>
+											<option :value="gponmerk.id" :key="gponmerk.id" v-for="gponmerk in gponmerks">{{ gponmerk.name }}</option>
+										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="mitra">Mitra</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="mitra" name="mitra" v-model="mitra">
-												<option :value="0">Pilih Mitra</option>
-												<option :value="mitra.id" :key="mitra.id" v-for="mitra in mitras">{{ mitra.name }}</option>
-											</select>
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="mitra">Mitra</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<select class="form-control form-control-sm" id="mitra" name="mitra" v-model="mitra">
+											<option :value="0">Pilih Mitra</option>
+											<option :value="mitra.id" :key="mitra.id" v-for="mitra in mitras">{{ mitra.name }}</option>
+										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="statuscons">S. Pembangunan</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="statuscons" name="statuscons" v-model="statuscons">
-												<option :value="0">Pilih Status</option>
-												<option :value="statuscons.id" :key="statuscons.id" v-for="statuscons in statusconss">{{ statuscons.name }}</option>
-											</select>
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="statuscons">S. Pembangunan</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<select class="form-control form-control-sm" id="statuscons" name="statuscons" v-model="statuscons">
+											<option :value="0">Pilih Status</option>
+											<option :value="statuscons.id" :key="statuscons.id" v-for="statuscons in statusconss">{{ statuscons.name }}</option>
+										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="statusinv">S. Inventori</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="statusinv" name="statusinv" v-model="statusinv" v-on:change="">
-												<option :value="0">Pilih Mitra</option>
-												<option :value="statusinv.id" :key="statusinv.id" v-for="statusinv in statusinvs">{{ statusinv.name }}</option>
-											</select>
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="statusinv">S. Inventori</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<select class="form-control form-control-sm" id="statusinv" name="statusinv" v-model="statusinv" v-on:change="">
+											<option :value="0">Pilih Mitra</option>
+											<option :value="statusinv.id" :key="statusinv.id" v-for="statusinv in statusinvs">{{ statusinv.name }}</option>
+										</select>
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="lokasi">Lokasi</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<input type="text" class="form-control form-control-sm" placeholder="Lokasi" name="lokasi" id="lokasi" v-model="lokasi">
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="lokasi">Lokasi</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<input type="text" class="form-control form-control-sm" placeholder="Lokasi" name="lokasi" id="lokasi" v-model="lokasi">
 									</div>
 								</div>
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md" style="text-align: right;">
-											<button type="button" class="btn btn-success btn-sm" v-if="typeform === 'edit'" v-on:click="editGpon()">Simpan &nbsp<i class="fas fa-save"></i></button>
-											<button type="submit" class="btn btn-primary btn-sm" v-if="typeform === 'add'">Tambah &nbsp<i class="fas fa-plus-circle"></i></button>
-											<button type="button" class="btn btn-danger btn-sm" v-on:click="formgponshow = false; reset()">Batal &nbsp<i class="fas fa-ban"></i></button>
-										</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md" style="text-align: right;">
+										<button type="button" class="btn btn-success btn-sm" v-if="typeform === 'edit'" v-on:click="editGpon()">Simpan &nbsp<i class="fas fa-save"></i></button>
+										<button type="submit" class="btn btn-primary btn-sm" v-if="typeform === 'add'" v-on:click="addGpon()">Tambah &nbsp<i class="fas fa-plus-circle"></i></button>
+										<button type="button" class="btn btn-danger btn-sm" v-on:click="formgponshow = false; reset()">Batal &nbsp<i class="fas fa-ban"></i></button>
 									</div>
 								</div>
-								<div class="form-group" v-if="typeform === 'edit'">
-									<div class="row">
-										<div class="col-md-4">
-											<label for="histori">Histori</label>
-										</div>
-										<div class="col-md-1" style="text-align: center;">
-											<label> : </label>
-										</div>
-										<div class="col-md-7">
-											<input type="text" class="form-control form-control-sm" placeholder="Histori">
-										</div>
+							</div>
+							<div class="form-group" v-if="typeform === 'edit'">
+								<div class="row">
+									<div class="col-md-4">
+										<label for="histori">Histori</label>
+									</div>
+									<div class="col-md-1" style="text-align: center;">
+										<label> : </label>
+									</div>
+									<div class="col-md-7">
+										<input type="text" class="form-control form-control-sm" placeholder="Histori">
 									</div>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

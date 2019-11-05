@@ -109,7 +109,7 @@
 					<div class="card border-danger">
 						<div class="card-header"><b><i>Form Odf</i></b></div>
 						<div class="card-body">
-							<form @submit.prevent="addOdf">
+							<!-- <form @submit.prevent="addOdf"> -->
 								<input type="hidden" id="typeform" name="typeform" v-model="typeform">
 								<div class="form-group">
 									<div class="row">
@@ -189,7 +189,7 @@
 									<div class="row">
 										<div class="col-md" style="text-align: right;">
 											<button type="button" class="btn btn-success btn-sm" v-if="typeform === 'edit'" v-on:click="editOdf()">Simpan &nbsp<i class="fas fa-save"></i></button>
-											<button type="submit" class="btn btn-primary btn-sm" v-if="typeform === 'add'">Tambah &nbsp<i class="fas fa-plus-circle"></i></button>
+											<button type="submit" class="btn btn-primary btn-sm" v-if="typeform === 'add'" v-on:click="addOdf()">Tambah &nbsp<i class="fas fa-plus-circle"></i></button>
 											<button type="button" class="btn btn-danger btn-sm" v-on:click="formodfshow = false; reset()">Batal &nbsp<i class="fas fa-ban"></i></button>
 										</div>
 									</div>
@@ -207,7 +207,7 @@
 										</div>
 									</div>
 								</div>
-							</form>
+							<!-- </form> -->
 						</div>
 					</div>
 				</div>

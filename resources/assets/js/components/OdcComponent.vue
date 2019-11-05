@@ -90,7 +90,7 @@
 									<div class="col-md-12">
 										<v-client-table :columns="columns" :data="odcs" :options="options">
 											<span slot="opsi" slot-scope="{row}">
-												<button class="btn btn-secondary btn-sm" v-on:click="formodcshow = true; typeform = 'edit'; showOdf(row.id)">EDIT <i class="fas fa-edit"></i></button>
+												<button class="btn btn-secondary btn-sm" v-on:click="formodcshow = true; typeform = 'edit'; showOdc(row.id)">EDIT <i class="fas fa-edit"></i></button>
 											</span>
 										</v-client-table>		
 									</div>
@@ -103,7 +103,7 @@
 					<div class="card border-danger">
 						<div class="card-header"><b><i>Form Odc</i></b></div>
 						<div class="card-body">
-							<form>
+							<!-- <form> -->
 								<input type="hidden" id="typeform" name="typeform" v-model="typeform">
 								<div class="form-group">
 									<div class="row">
@@ -219,7 +219,7 @@
 										</div>
 									</div>
 								</div>
-							</form>
+							<!-- </form> -->
 						</div>
 					</div>
 				</div>
@@ -260,18 +260,18 @@
 				name: '',
 				address: '',
 				lokasi: '',
-				columns: ['name','spesifikasi', 'projek', 'mitra', 'opsi'],
+				columns: ['name','odcspec.name', 'project.name', 'mitra.name', 'opsi'],
 				small: true,
 				options: {
 					headings: {
 						name: 'Nama',
-						spesifikasi: 'Spesifikasi',
-						projek: 'Projek',
-						mitra: 'Mitra',
+						'odcspec.name': 'Spesifikasi',
+						'project.name': 'Projek',
+						'mitra.name': 'Mitra',
 						opsi: 'opsi'
 					},
-					sortable: ['name', 'spesifikasi', 'projek', 'mitra '],
-					filterable: ['name', 'spesifikasi', 'projek', 'mitra'],
+					sortable: ['name', 'odcspec.name', 'project.name', 'mitra.name'],
+					filterable: ['name', 'odcspec.name', 'project.name', 'mitra.name'],
 					pagination: {chunk:10, dropdown: false}
 				}
 			}
@@ -402,6 +402,17 @@
 					(error) => console.log(error.message)
 				);
 			},
+            showOdc(id) {
+                axios.get('/alproodccontentodcshow/' + id)
+                .then(
+                    response => {
+                        this.odc = response.data.data
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            }
 		},
 		mounted() {
 			console.log('Component mounted.');
