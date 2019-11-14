@@ -470,7 +470,7 @@ import axios from 'axios';
 					this.startodplabel = 1;
 				}
 				else {
-					axios.get('/bookingcontentodpcountofodc/'+ this.odc)
+					axios.get(`/bookingcontentodpcountofodc/${this.odc}`)
 					.then(
 						response => {
 							this.startodplabel = (response.data.data.latestlabel + 1)

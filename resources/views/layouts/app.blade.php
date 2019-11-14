@@ -113,11 +113,6 @@
                                                         <img src="{{ asset('img/webapp/projek_progres.png') }}">
                                                     </a><br>Monitoring
                                                 </div>
-                                                <div class="col-md">
-                                                    <a href="{{ route('laporan') }}">
-                                                        <img src="{{ asset('img/webapp/projek_reporting.png') }}">
-                                                    </a><br>Laporan
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -157,13 +152,13 @@
                                         <br>Mancore
                                     </div>
                                     <div class="col-md">
-                                        <a href="">
+                                        <a href="{{ route('mitra') }}">
                                             <img src="{{ asset('img/webapp/mitra.png') }}">
                                         </a>
                                         <br>Mitra
                                     </div>
                                     <div class="col-md">
-                                        <a href="">
+                                        <a href="{{ route('pengguna') }}">
                                             <img src="{{ asset('img/webapp/user.png') }}">
                                         </a>
                                         <br>Pengguna

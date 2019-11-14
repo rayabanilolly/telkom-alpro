@@ -35,6 +35,11 @@ Route::get('/odf', 'HomeController@odf')->name('odf');
 Route::get('/odc', 'HomeController@odc')->name('odc');
 Route::get('/odp', 'HomeController@odp')->name('odp');
 
+Route::get('/mitra', 'HomeController@mitra')->name('mitra');
+Route::get('/splitter', 'HomeController@splitter')->name('splitter');
+
+Route::get('/pengguna', 'HomeController@pengguna')->name('pengguna');
+
 Route::get('/regional', 'HomeController@regional')->name('regional');
 Route::get('/witel', 'HomeController@witel')->name('witel');
 Route::get('/sto', 'HomeController@sto')->name('sto');

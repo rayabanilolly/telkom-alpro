@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <odp-component></odp-component>
+<mitra-component></mitra-component>
 @endsection

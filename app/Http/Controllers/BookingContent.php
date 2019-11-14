@@ -97,6 +97,48 @@ class BookingContent extends Controller
         return response()->json(['data' => $data, 200]);
     }
 
+    public function project($region_id, $witel_id, $sto_id)
+    {
+        $projects = project::where('regional_id', $region_id)
+                            ->where('witel_id', $witel_id)
+                            ->where('sto_id', $sto_id)
+                            ->withCount('mitra')
+                            ->with('mitra', 'statusProject')
+                            ->get();
+
+        return response(['data' => $projects]);
+    }
+
+    public function deleteProject($id) 
+    {
+        $project = project::find($id);
+        $project->delete();
+
+        $response = [
+            'status' => true
+        ];
+
+        return response($response);
+    }
+
+    public function editProject(Request $request)
+    {
+        $request = $request->json();
+
+        $id = $request->get('id');
+
+        $project = project::find($id);
+
+        $project->statusproj_id = $request->get('statusproj_id');
+        $project->update();
+
+        $response = [
+            'status' => true
+        ];
+
+        return response($response);
+    }
+
     public function booking(Request $request)
     {
         $data['regional'] = $request->regional;
@@ -156,6 +198,7 @@ class BookingContent extends Controller
             // $distribusi->distributions = intval($data['distribusi_baru']);
             $distribusi->distributions = intval(preg_replace('/[^0-9]+/', '', $data['distribusi_baru']), 10);
             $distribusi->odc_id = $data['odc'] == 'add' ? $odc->id : $data['odc'];
+            return intval(preg_replace('/[^0-9]+/', '', $data['distribusi_baru']), 10);
             $distribusi->capacity = $data['kap_distribusi_baru'];
             $distribusi->save();
         endif;

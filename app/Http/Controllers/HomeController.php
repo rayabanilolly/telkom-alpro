@@ -70,6 +70,24 @@ class HomeController extends Controller
         return view('mancore');
     }
 
+    // Mitra Menu
+    public function mitra()
+    {
+        return view('mitra');
+    }
+
+    // Pengguna Menu
+    public function pengguna()
+    {
+        return view('pengguna');
+    }
+
+    // Pengguna Menu
+    public function splitter()
+    {
+        return view('splitter');
+    }
+
     // Master Menu
     public function regional()
     {

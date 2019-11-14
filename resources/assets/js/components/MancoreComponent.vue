@@ -103,7 +103,10 @@
                 </div>
                 <div class="col-md-7" v-if="done">
                     <div class="card border-danger">
-                        <div class="card-header" style="text-align:center"><b><i>{{ odcname }}</i></b></div>
+                        <div class="card-header" style="text-align:center">
+                            <b><i>{{ odcname }}</i></b>
+                            <button @click="modal=true" id="splitter-btn" class="btn btn-sm btn-primary position-absolute">Data Splitter</button>
+                        </div>
                         <div class="card-body">
                             <div class="row" v-for="(panel, indexpanel) in panels" :key="panel.id">
                                 <div class="col-md-12">
@@ -115,7 +118,8 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md" v-for="(port, indexport) in panel.ports" :key="port.id">
-                                                <button @click="portPopover((indexpanel+1), (indexport+1), port.type, port.data)" class="btn btn-sm btn-primary pop" data-container="body" data-toggle="popover" data-placement="bottom"> {{ (indexport + 1) }} </button>
+                                                <!-- <button @click="portPopover((indexpanel+1), (indexport+1), port.type, port.data)" class="btn btn-sm btn-primary pop" data-container="body" data-toggle="popover" data-placement="bottom"> {{ (indexport + 1) }} </button> -->
+                                                <button @click="showModalPanel()" class="btn btn-sm btn-primary pop" data-container="body" data-toggle="popover" data-placement="bottom"> {{ (indexport + 1) }} </button>
                                             </div>
                                         </div>
                                     </div>
@@ -139,16 +143,98 @@
                 </div>
             </div>
         </div>
+
+        <stack-modal
+            :show="modal"
+            title="Data Splitter"
+            @close="modal=false"
+        >
+            <button class="btn btn-info btn-sm" @click="createModal=true">Tambah Splitter</button>
+
+            <v-client-table :columns="columns" :data="splitters" :options="options">
+                <span slot="opsi" slot-scope="{row}">
+                    <div class="button-group">
+                        <button class="btn btn-primary btn-sm" v-on:click="splitterEdit(row)">
+                            Edit <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" v-on:click="splitterDelete(row.id)">
+                            Hapus <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </span>
+            </v-client-table>
+        </stack-modal>
+
+        <stack-modal
+            :show="createModal"
+            title="Tambah Data Splitter"
+            @close="createModal=false"
+        >
+            <form @submit.prevent="saveSplitter()">
+                <div class="form-group">
+                    <label for="splitter-name">Nama Splitter</label>
+                    <input type="text" class="form-control" v-model="splitter.name" id="splitter-name" placeholder="Nama Splitter">
+                </div>
+                <div class="form-group">
+                    <label for="splitter-port">Port</label>
+                    <select id="splitter-port" v-model="splitter.port" class="form-control">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="16">16</option>
+                    </select>
+                </div> 
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                </div>
+            </form>
+        </stack-modal>
+
+        <stack-modal
+            :show="portPanelModal"
+            title="Tambah Data Splitter"
+            @close="portPanelModal=false"
+        >
+            <form @submit.prevent="savePortPanel()">
+                <div class="form-group">
+                    <label for="splitter-name">Nama Splitter</label>
+                    <input type="text" class="form-control" v-model="splitter.name" id="splitter-name" placeholder="Nama Splitter">
+                </div>
+                <div class="form-group">
+                    <label for="splitter-port">Port</label>
+                    <select id="splitter-port" v-model="splitter.port" class="form-control">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="16">16</option>
+                    </select>
+                </div> 
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                </div>
+            </form>
+        </stack-modal>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
+    
+    import axios from 'axios';
+    import StackModal from '@innologica/vue-stackable-modal'
+
     export default {
         data() {
             return {
                 loading: false,
-                done: false,
+                done: false,                
+                splitter: {},
+                splitters: [],
+                modal: false,
+                createModal: false,
+                portPanelModal: false,
+                modalTitle: 'Data Splitter',
                 regionals: [],
 				regional: '',
 				witels: [],
@@ -160,10 +246,27 @@ import axios from 'axios';
                 odcname: '',
                 panels: [],
                 distributions: [],
-                datadistributions: []
+                datadistributions: [],
+                columns: ['name', 'port', 'opsi'],
+                options: {
+                    headings: {
+                        'name': 'Nama',
+                        'port': 'Jumlah Port',
+                        'opsi': 'Aksi'
+                    },
+                    sortable: ['name', 'port'],
+                    filterable: ['name'],
+                    pagination: {
+                        chunk:10, dropdown: false
+                    }
+                }
             }
         },
         methods: {
+            showModalPanel()
+            {
+                this.portPanelModal = true
+            },
             allRegional() {
 				axios.get('/mancorecontentregional')
 				.then(
@@ -211,6 +314,7 @@ import axios from 'axios';
             showOdc() {
                 this.loading = true;
                 this.done = false;
+                this.splitter.odc_id = this.odc
 
                 this.odcname = $('#odc option:selected').html();
                 
@@ -222,6 +326,8 @@ import axios from 'axios';
                         this.panels = response.data.data.panelofodc;
                         this.distributions = response.data.data.distDoesntHavePanel;
                         this.datadistributions = response.data.data.alldistributions;
+
+                        this.getSplitter()
 
                         this.loading = false;
                         this.done = true;
@@ -250,6 +356,73 @@ import axios from 'axios';
                         return $('#popover_port_'+ popover).html();
                     }
                 });
+            },
+            getSplitter()
+            {
+                this.loading = true
+
+                axios.get(`splitter-get/${ this.odc }`)
+                .then(
+                    response => {
+                        this.loading = false
+
+                        this.splitters = response.data.data
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            saveSplitter()
+            {
+                this.loading = true
+
+                axios.post(`/splitter-save`, this.splitter)
+                .then(
+                    response => {
+                        this.loading = false
+
+                        this.splitter.name = ''
+                        this.splitter.port = ''
+                        this.createModal = false
+
+                        this.getSplitter();
+
+                        return alert('Berhasil!')
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            splitterEdit(row) 
+            {
+                this.splitter.id     = row.id
+                this.splitter.name   = row.name
+                this.splitter.port   = row.port
+                this.splitter.odc_id = row.odc_id
+
+                this.createModal = true
+            },
+            splitterDelete(id)
+            {
+                if (confirm('yakin mau menghapus data?')) {
+
+                    this.loading = true
+
+                    axios.get(`splitter-delete/${id}`)
+                    .then(
+                        response => {
+                            this.getSplitter();
+                            this.loading = false
+
+                            return alert('Splitter berhasil dihapus!')
+                        }
+                    )
+                    .catch(
+                        (error) => console.log(error.message)
+                    )
+                }
             }
         },
         mounted() {
@@ -258,3 +431,9 @@ import axios from 'axios';
         }
     }
 </script>
+
+<style>
+    #splitter-btn {
+        right: 1em;
+    }
+</style>

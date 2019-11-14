@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <odp-component></odp-component>
+    <splitter-component></splitter-component>
 @endsection

@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'unique', 'password', 'remember_token',
     ];
+
+    public function mitra() {
+        return $this->hasOne('App\mitra', 'id', 'mitra_id');
+    }
 }

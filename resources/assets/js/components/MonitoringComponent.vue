@@ -91,15 +91,67 @@
 							<div v-if="done">
 								<div class="row">
 									<div class="col-md-12">
-										<v-client-table :columns="columns" :data="projects" :options="options">
-											
-										</v-client-table>		
+										<v-client-table 
+                                            :columns="columns" 
+                                            :data="projects" 
+                                            :options="options">
+                                            <span slot="opsi" slot-scope="{row}">
+                                                <div class="button-group">
+                                                    <button class="btn btn-primary btn-sm" v-on:click="editData(row)">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button class="btn btn-danger btn-sm" v-on:click="deleteData(row.id)">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </span>    
+                                        </v-client-table>	
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+                <div v-if="edited === true" class="col-md-5">
+                    <div class="card border-primary">
+                        <div class="card-header">
+                            <b><i>Ubah Status</i></b>
+                        </div>
+                        <div class="card-body">
+                            <form @submit.prevent="submitEdit()">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="status">Nama Projek</label>
+                                        </div>
+                                        <div class="col-md-1"> : </div>
+                                        <div class="col-md-8">
+                                            <input type="text" disabled class="form-control form-control-sm" v-model="project.name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label for="status">Status</label>
+                                        </div>
+                                        <div class="col-md-1"> : </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control form-control-sm" v-model="project.statusproj_id">
+                                                <option :value="status.id" :key="status.id" v-for="status in statuss">
+                                                    {{ status.name }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-9 offset-md-4">
+                                            <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -111,6 +163,7 @@ import axion from 'axios';
 		data() {
 			return {
 				loading: false,
+                edited: false,
 				done: false,
 				regionals: [],
 				regional: '',
@@ -119,21 +172,21 @@ import axion from 'axios';
 				stos: [],
 				sto: '',
 				projects: [],
+                statuss: [],
 				project: '',
-				columns: ['number', 'name', 'contract', 'mitra','odc', 'odp', 'status', 'date'],
+				columns: ['name', 'no_contract', 'mitra.name', 'odpcount', 'status_project.name', 'created_at', 'opsi'],
 				small: true,
 				options: {
 					headings: {
-						number: 'No',
 						name: 'Projek',
-						contract: 'Kontrak',
-						mitra: 'Mitra',
-						odc: 'Jumlah ODC',
-						odp: 'Jumlah ODP',
-						status: 'Status',
-						date: 'Dibuat pada'
+						no_contract: 'Kontrak',
+						'mitra.name' : 'Mitra',
+						odpcount: 'Jumlah ODP',
+						'status_project.name': 'Status',
+						created_at: 'Dibuat pada',
+                        opsi: 'Aksi'
 					},
-					sortable: ['name', 'contract', 'mitra', 'status', 'date']
+					sortable: ['name', 'no_contract', 'mitra', 'status_project.name', 'created_at']
 				}
 			}
 		},
@@ -149,6 +202,44 @@ import axion from 'axios';
 					(error) => console.log(error.message)
 				);
 			},
+            editData(data) {
+                this.edited = true
+                this.project = data
+            },
+            submitEdit() {
+                
+                this.loading = true
+                axios.post(`monitoringcontentprojectedit/`, this.project)
+                .then( 
+                    response => {
+                        alert('status berhasil diubah!');
+
+                        this.allProjek();
+                        this.edited = false
+                        this.loading = false
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            deleteData(id) {
+                if (confirm('yakin mau dihapus?')) {
+                    this.loading = true
+
+                    axios.get(`monitoringcontentprojectdelete/${id}`)
+                    .then(
+                        response => {
+                            alert('data berhasil dihapus?');
+                            this.allProjek();
+                            this.loading = false;
+                        }
+                    )
+                    .catch( 
+                        (error) => console.log(error.message)
+                    )
+                }
+            },
 			allWitel() {
 				axios.get('/monitoringcontentwitel/'+ this.regional)
 				.then(
@@ -170,10 +261,36 @@ import axion from 'axios';
 				.catch(
 					(error) => console.log(error.message)
 				);
-			}
+			},
+            allProjek() {
+                this.loading = true,
+                axios.get(`/monitoringcontentproject/${this.regional}/${this.witel}/${this.sto}`)
+                    .then(
+                    response => {
+                        this.projects = response.data.data
+                        this.loading = false
+                        this.done = true
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            getStatuss() {
+                axios.get(`/status-project-get/`)
+                .then(
+                    response => {
+                        this.statuss = response.data.data
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            }
 		},
 		mounted() {
 			console.log('Component mounted.');
+            this.getStatuss();
 			this.allRegional();
 		}
 	}

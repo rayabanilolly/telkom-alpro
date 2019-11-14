@@ -55,10 +55,20 @@ Vue.component('beranda-component', require('./components/BerandaComponent.vue').
 Vue.component('projek-component', require('./components/ProjekComponent.vue').default);
 Vue.component('monitoring-component', require('./components/MonitoringComponent.vue').default);
 
+// Alpro Component
 Vue.component('gpon-component', require('./components/GponComponent.vue').default);
 Vue.component('odf-component', require('./components/OdfComponent.vue').default);
 Vue.component('odc-component', require('./components/OdcComponent.vue').default);
 Vue.component('odp-component', require('./components/OdpComponent.vue').default);
+
+// Mitra Component
+Vue.component('mitra-component', require('./components/MitraComponent.vue').default);
+
+// Pengguna Component
+Vue.component('pengguna-component', require('./components/PenggunaComponent.vue').default);
+
+// Splitter Component
+Vue.component('splitter-component', require('./components/SplitterComponent.vue').default);
 
 // Master Component
 Vue.component('regional-component', require('./components/RegionalComponent.vue').default);

@@ -99,7 +99,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-5" v-show="formodcshow">
+				<div class="col-md-5" v-if="formodcshow === true">
 					<div class="card border-danger">
 						<div class="card-header"><b><i>Form Odc</i></b></div>
 						<div class="card-body">
@@ -114,7 +114,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<input type="text" class="form-control form-control-sm" placeholder="Nama Odc" name="name" id="name" v-model="name">
+											<input type="text" class="form-control form-control-sm" placeholder="Nama Odc" name="name" id="name" v-model="odc.name">
 										</div>
 									</div>
 								</div>
@@ -127,7 +127,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="odcspec" name="odcspec" v-model="odcspec">
+											<select class="form-control form-control-sm" id="odcspec" name="odcspec" v-model="odc.odcspec_id">
 												<option :value="0">Pilih Spesifikasi</option>
 												<option :value="odcspec.id" :key="odcspec.id" v-for="odcspec in odcspecs">{{ odcspec.name }}</option>
 											</select>
@@ -143,7 +143,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<input type="text" class="form-control form-control-sm" placeholder="Nama Projek" name="projek" id="projek" v-model="projek">
+											<input type="text" class="form-control form-control-sm" v-model="odc.project.name" name="projek" id="projek" disabled>
 										</div>
 									</div>
 								</div>
@@ -156,7 +156,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="typeproject" name="typeproject" v-model="typeproject">
+											<select class="form-control form-control-sm" disabled id="typeproject" name="typeproject" v-model="odc.project.statusproj_id">
 												<option :value="0">Pilih Tipe</option>
 												<option :value="typeproject.id" :key="typeproject.id" v-for="typeproject in typeprojects">{{ typeproject.name }}</option>
 											</select>
@@ -172,7 +172,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="mitra" name="mitra" v-model="mitra">
+											<select class="form-control form-control-sm" id="mitra" name="mitra" v-model="odc.mitra_id">
 												<option :value="0">Pilih Mitra</option>
 												<option :value="mitra.id" :key="mitra.id" v-for="mitra in mitras">{{ mitra.name }}</option>
 											</select>
@@ -188,7 +188,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="statuscons" name="statuscons" v-model="statuscons">
+											<select class="form-control form-control-sm" id="statuscons" name="statuscons" v-model="odc.statuscons_id">
 												<option :value="0">Pilih Status</option>
 												<option :value="statuscons.id" :key="statuscons.id" v-for="statuscons in statusconss">{{ statuscons.name }}</option>
 											</select>
@@ -204,7 +204,7 @@
 											<label> : </label>
 										</div>
 										<div class="col-md-7">
-											<select class="form-control form-control-sm" id="statusinv" name="statusinv" v-model="statusinv" v-on:change="">
+											<select class="form-control form-control-sm" id="statusinv" name="statusinv" v-model="odc.statusinv_id" v-on:change="">
 												<option :value="0">Pilih Mitra</option>
 												<option :value="statusinv.id" :key="statusinv.id" v-for="statusinv in statusinvs">{{ statusinv.name }}</option>
 											</select>
@@ -245,7 +245,7 @@
 				sto: '',
 				id: '',
 				odcs: [],
-				odc:'',
+				odc: {},
 				odcspecs: [],
 				odcspec: '',
 				mitras: [],
@@ -406,7 +406,21 @@
                 axios.get('/alproodccontentodcshow/' + id)
                 .then(
                     response => {
-                        this.odc = response.data.data
+                        this.odc = response.data.data[0]
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            editOdc() {
+                this.loading = true
+
+                axios.post(`alproodccontentodcedit`, this.odc)
+                .then(
+                    response => {
+                        this.allOdc()
+                        this.loading = false
                     }
                 )
                 .catch(

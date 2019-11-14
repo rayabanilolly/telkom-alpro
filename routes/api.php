@@ -37,6 +37,9 @@ Route::get('/bookingcontentodpcountofodc/{odc_id}', 'BookingContent@odpcountofod
 Route::get('/monitoringcontentregional', 'BookingContent@regional');
 Route::get('/monitoringcontentwitel/{regional_id}', 'BookingContent@witel');
 Route::get('/monitoringcontentsto/{witel_id}', 'BookingContent@sto');
+Route::get('/monitoringcontentproject/{regional_id}/{witel_id}/{sto_id}', 'BookingContent@project');
+Route::post('/monitoringcontentprojectedit', 'BookingContent@editProject');
+Route::get('/monitoringcontentprojectdelete/{id}', 'BookingContent@deleteProject');
 
 Route::get('/alprogponcontentregional', 'BookingContent@regional');
 Route::get('/alprogponcontentwitel/{regional_id}', 'BookingContent@witel');
@@ -65,12 +68,37 @@ Route::get('/alproodccontentregional', 'BookingContent@regional');
 Route::get('/alproodccontentwitel/{regional_id}', 'BookingContent@witel');
 Route::get('/alproodccontentsto/{witel_id}', 'BookingContent@sto');
 Route::post('/alproodccontentodc', 'OdcContent@odc');
+Route::post('/alproodccontentodcedit', 'OdcContent@odcedit');
 Route::get('/alproodccontentodcspec', 'OdcContent@odcspec');
 Route::get('/alproodccontenttypeproj', 'OdcContent@typeproject');
 Route::get('/alproodccontentstatuscons', 'GponContent@statuscons');
 Route::get('/alproodccontentstatusinv', 'GponContent@statusinv');
 Route::get('/alproodccontentmitra', 'BookingContent@mitra');
 Route::get('/alproodccontentodcshow/{odc_id}', 'OdcContent@odcshow');
+
+// Alpro ODP
+Route::get('/getodp/{odc_id}', 'OdpContent@odp');
+Route::get('/getodc/{sto_id}', 'OdcContent@allOdc');
+
+Route::post('/editodp', 'OdpContent@edit');
+
+// Mitra 
+Route::get('mitra-get', 'MitraController@index');
+Route::get('mitra-delete/{mitra_id}', 'MitraController@delete');
+
+Route::post('mitra-save', 'MitraController@save');
+
+// Mitra 
+Route::get('users-get', 'UserController@index');
+Route::get('users-delete/{users_id}', 'UserController@delete');
+
+Route::post('users-save', 'UserController@save');
+
+// Splitter
+Route::get('splitter-get/{odc_id}', 'SplitterController@index');
+Route::get('splitter-delete/{odc_id}', 'SplitterController@delete');
+
+Route::post('splitter-save', 'SplitterController@save');
 
 Route::get('/distributioncontentregional', 'BookingContent@regional');
 Route::get('/distributioncontentwitel/{regional_id}', 'BookingContent@witel');
