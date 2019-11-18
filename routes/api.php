@@ -21,6 +21,7 @@ Route::get('/homecontentproject', 'HomeContent@ContentDataProject');
 Route::get('/homecontentgpon', 'HomeContent@ContentDataGpon');
 Route::get('/homecontentodc', 'HomeContent@ContentDataODC');
 Route::get('/homecontentodp', 'HomeContent@ContentDataODP');
+Route::get('/homecontentdata', 'HomeContent@getData');
 
 Route::get('/bookingcontentregional', 'BookingContent@regional');
 Route::get('/bookingcontentwitel/{regional_id}', 'BookingContent@witel');
@@ -82,6 +83,9 @@ Route::get('/getodc/{sto_id}', 'OdcContent@allOdc');
 
 Route::post('/editodp', 'OdpContent@edit');
 
+// ODP 
+Route::get('/odp-get/{odc_id}/{distribution_id}', 'OdpContent@getOdp');
+
 // Mitra 
 Route::get('mitra-get', 'MitraController@index');
 Route::get('mitra-delete/{mitra_id}', 'MitraController@delete');
@@ -94,6 +98,13 @@ Route::get('users-delete/{users_id}', 'UserController@delete');
 
 Route::post('users-save', 'UserController@save');
 
+// Distribution
+Route::get('distribution-get', 'DistribusiContent@distribution');
+Route::get('port-delete/{id}', 'DistribusiContent@delete');
+
+// Distribution
+Route::get('gpon-get/{sto_id}', 'GponContent@getGpon');
+
 // Splitter
 Route::get('splitter-get/{odc_id}', 'SplitterController@index');
 Route::get('splitter-delete/{odc_id}', 'SplitterController@delete');
@@ -105,6 +116,7 @@ Route::get('/distributioncontentwitel/{regional_id}', 'BookingContent@witel');
 Route::get('/distributioncontentsto/{witel_id}', 'BookingContent@sto');
 Route::get('/distributioncontentodc/{sto_id}', 'BookingContent@odc');
 Route::post('/distributioncontentoneodc', 'DistribusiContent@oneodc');
+Route::post('/odcsaveportdata', 'DistribusiContent@saveodc');
 Route::post('/distributioncontentadd', 'DistribusiContent@add');
 Route::post('/distributioncontentchangeonedistribution', 'DistribusiContent@changeonedistribution');
 Route::post('/distributioncontentchangecapacitydistribution', 'DistribusiContent@changecapacitydistribution');

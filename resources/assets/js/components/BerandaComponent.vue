@@ -31,132 +31,15 @@
 	                <div class="card border-primary">
 	                    <div class="card-header"><b><i>Data GPON</i></b></div>
 	                    <div class="card-body">
-	                        <span class="badge badge-dark">SMRSEM</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">00000</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRTSN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRPAA</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRLMP</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRPLL</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRLOB</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSGK</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSBR</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRTMD</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSMR</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGTGG</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGSAN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGAGN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">MLKMLA</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">MBDMBD</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SAASTT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">BOGLKT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">BOGBOT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
+                            <div v-for="gpon in data.gpons">
+                                <span class="badge badge-dark">{{ gpon.name }}</span>
+                                <li>
+                                    <span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">{{ gpon.gpon_planned.length }}</span>
+                                </li>
+                                <li>
+                                    <span class="badge badge-success">In Service</span> : <span class="badge badge-dark">{{ gpon.gpon_inservice.length }}</span>
+                                </li>
+                            </div>
 	                    </div>
 	                </div>
 	            </div>
@@ -164,132 +47,15 @@
 	                <div class="card border-danger">
 	                    <div class="card-header"><b><i>Data ODC</i></b></div>
 	                    <div class="card-body">
-	                        <span class="badge badge-dark">SMRSEM</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">00000</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRTSN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRPAA</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRLMP</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRPLL</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRLOB</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSGK</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSBR</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRTMD</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSMR</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGTGG</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGSAN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGAGN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">MLKMLA</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">MBDMBD</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SAASTT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">BOGLKT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">BOGBOT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
+	                        <div v-for="odc in data.odcs">
+                                <span class="badge badge-dark">{{ odc.name }}</span>
+                                <li>
+                                    <span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">{{ odc.odc_planned.length }}</span>
+                                </li>
+                                <li>
+                                    <span class="badge badge-success">In Service</span> : <span class="badge badge-dark">{{ odc.odc_inservice.length }}</span>
+                                </li>
+                            </div>
 	                    </div>
 	                </div>
 	            </div>
@@ -297,132 +63,15 @@
 	                <div class="card border-success">
 	                    <div class="card-header"><b><i>Data ODP</i></b></div>
 	                    <div class="card-body">
-	                        <span class="badge badge-dark">SMRSEM</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">00000</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRTSN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRPAA</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRLMP</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRPLL</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRLOB</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSGK</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSBR</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRTMD</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SMRSMR</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGTGG</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGSAN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">TRGAGN</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">MLKMLA</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">MBDMBD</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">SAASTT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">BOGLKT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <span class="badge badge-dark">BOGBOT</span>
-	                        <li>
-	                        	<span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">0</span>
-	                        </li>
-	                        <li>
-	                        	<span class="badge badge-success">In Service</span> : <span class="badge badge-dark">0</span>
-	                        </li>
+	                        <div v-for="odp in data.odps">
+                                <span class="badge badge-dark">{{ odp.name }}</span>
+                                <li>
+                                    <span class="badge badge-primary">Planned</span> : <span class="badge badge-dark">{{ odp.odp_planned.length }}</span>
+                                </li>
+                                <li>
+                                    <span class="badge badge-success">In Service</span> : <span class="badge badge-dark">{{ odp.odp_inservice.length }}</span>
+                                </li>
+                            </div>
 	                    </div>
 	                </div>
 	            </div>
@@ -435,8 +84,8 @@
 	                    <div class="card-header"><b><i>Terbaru</i></b></div>
 	                    <div class="card-body text-dark">
 	                        <li>
-	                        	Projek : <span class="badge badge-success">ABD-FTTH-SC-7421831-PT TKM (ODP-SBR-FAG 050-051)</span> <span class="badge badge-warning">MIGRASI</span> <br> 
-	                        	Nomor kontrak : <span class="badge badge-primary">KTEL.006901/HK.810/R6W-6F100000/2017</span> Status : <span class="badge badge-danger">Projek baru</span> pada tanggal <span class="badge badge-dark">2018-09-10 20:55:43</span>
+	                        	Projek : <span class="badge badge-success">{{ data.last_project.name }}</span> <span class="badge badge-warning">{{ data.last_project.type_project.name }}</span> <br> 
+	                        	Nomor kontrak : <span class="badge badge-primary">{{ data.last_project.no_contract }}</span> Status : <span class="badge badge-danger">{{ data.last_project.status_project.name }}</span> pada tanggal <span class="badge badge-dark">{{ data.last_project.status_project.created_at }}</span>
 	                        </li>
 	                    </div>
 	                </div>
@@ -455,7 +104,8 @@ import axios from 'axios';
 				pembangunan: '',
 				inventory: '',
 				close: '',
-				kendala: ''
+				kendala: '',
+                data: []
 			}
     	},
     	methods: {
@@ -473,11 +123,23 @@ import axios from 'axios';
 				.catch(
 					(error) => console.log(error)
 				);
-    		}
+    		},
+            getData() {
+                axios.get('/homecontentdata')
+                .then(
+                    response => {
+                        this.data = response.data.data
+                    },
+                )
+                .catch(
+                    (error) => console.log(error)
+                );
+            }
     	},
         mounted() {
             console.log('Component mounted.');
             this.getProject();
+            this.getData();
         }
     }
 </script>

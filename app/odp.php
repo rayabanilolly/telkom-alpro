@@ -28,6 +28,16 @@ class odp extends Model
         return $this->belongsTo('App\witel', 'witel_id', 'id');
     }
 
+    public function statusinv()
+    {
+        return $this->belongsTo('App\statusinv', 'statusinv_id', 'id');
+    }
+
+    public function statuscons()
+    {
+        return $this->belongsTo('App\statuscons', 'statuscons_id', 'id');
+    }
+
     public function sto()
     {
         return $this->belongsTo('App\sto', 'sto_id', 'id');

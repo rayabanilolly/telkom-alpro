@@ -45,6 +45,24 @@ class GponContent extends Controller
         return response()->json(['data' => $data, 200]);
     }
 
+    public function getGpon($sto_id) {
+
+        $response = null;
+
+        $gpons = gpon::where('sto_id', $sto_id)
+                    ->get();
+
+        if ($gpons !== null) {
+            
+            $response = [
+                'data' => $gpons,
+                'status' => true
+            ];
+        }
+
+        return response($response);
+    }
+
     public function gponadd(Request $request)
     {
         $lokasi = explode(',', $request->lokasi);

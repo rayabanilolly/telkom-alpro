@@ -22,4 +22,9 @@ class project extends Model
     {
         return $this->belongsTo('App\statusproj', 'statusproj_id', 'id');
     }
+
+    public function typeProject()
+    {
+        return $this->belongsTo('App\typeproj', 'typeproj_id', 'id');
+    }
 }

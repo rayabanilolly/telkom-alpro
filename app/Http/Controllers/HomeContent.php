@@ -7,6 +7,8 @@ use App\project;
 use App\gpon;
 use App\odc;
 use App\odp;
+use App\sto;
+use DB;
 
 class HomeContent extends Controller
 {
@@ -23,6 +25,49 @@ class HomeContent extends Controller
         $data['kendala'] = project::where(['statusproj_id' => 8, 'statusproj_id' => 9])->count();
 
         return response()->json(['data' => $data], 200);
+    }
+
+    public function getData()
+    {
+        $gpons = sto::with(['gpon_planned' => function($query) {
+                        $query->where('statuscons_id', 1);
+                    }])
+                    ->with(['gpon_inservice' => function($query) {
+                        $query->where('statuscons_id', 2);
+                    }])
+                    ->get();
+
+        $odcs = sto::with(['odc_planned' => function($query) {
+                        $query->where('statuscons_id', 1);
+                    }])
+                    ->with(['odc_inservice' => function($query) {
+                        $query->where('statuscons_id', 2);
+                    }])
+                    ->get();
+
+        $odps = sto::with(['odp_planned' => function($query) {
+                        $query->where('statuscons_id', 1);
+                    }])
+                    ->with(['odp_inservice' => function($query) {
+                        $query->where('statuscons_id', 2);
+                    }])
+                    ->get();
+
+        $project = project::orderBy('id', 'DESC')
+                            ->with('statusProject', 'typeProject')
+                            ->first();
+
+        $response = [
+            'data' => [
+                'gpons' => $gpons,
+                'odcs' => $odcs,
+                'odps' => $odps,
+                'last_project' => $project
+            ],
+            'status' => true
+        ];
+
+        return response($response);
     }
 
     public function ContentDataGpon()

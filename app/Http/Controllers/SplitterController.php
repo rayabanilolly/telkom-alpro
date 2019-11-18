@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\OdcPort;
 use App\Splitter;
 use Illuminate\Http\Request;
 
@@ -10,15 +11,16 @@ class SplitterController extends Controller
 	/**
 	 * Retrieving data from database
 	 */
-	public function index()
+	public function index($odc_id)
 	{
 		$response = null;
 
 		$data = Splitter::orderBy('name', 'ASC')
+                    ->where('odc_id', $odc_id)
 					->get();
 
 		if (!$data) {
-			
+
 			$response = [
 				'status' => false
 			];

@@ -10,13 +10,32 @@ class OdpContent extends Controller
     public function odp($odc_id) 
     {
         $data = odp::where('odc_id', $odc_id)
-                    ->with('odc', 'distribution', 'regional', 'witel', 'sto', 'mitra')
+                    ->with('odc', 'distribution', 'regional', 'witel', 'sto', 'mitra', 'statusinv', 'statuscons')
                     ->get();
 
         $response = [
             'data' => $data,
             'status' => true
         ];
+
+        return response($response);
+    }
+
+    public function getOdp($odc_id, $distribution_id)
+    {
+        $response =  null;
+
+        $odps = odp::where('odc_id', $odc_id)
+                    ->where('distribution_id', $distribution_id)
+                    ->get();
+
+        if ($odps != null) {
+
+            $response = [
+                'data' => $odps,
+                'status' => false
+            ];
+        }
 
         return response($response);
     }

@@ -390,18 +390,19 @@
                 odp: {},
                 mitra: '',
                 projek: '',
-                columns: ['name','power', 'odc.name', 'panel_in', 'opsi'],
+                columns: ['name', 'distribution.name', 'mitra.name', 'statuscons.name', 'statusinv.name', 'opsi'],
                 small: true,
                 options: {
                     headings: {
                         name: 'Nama',
-                        'power': 'Power',
-                        'odc.name': 'Nama Odc',
-                        'panel_in': 'Panel In',
-                        opsi: 'opsi'
+                        'distribution.name': 'Distribusi',
+                        'mitra.name': 'Mitra',
+                        'statuscons.name': 'Status Pembangunan',
+                        'statusinv.name': 'Keterangan',
+                        opsi: 'Opsi'
                     },
-                    sortable: ['name', 'power', 'odc.name', 'panel_in'],
-                    filterable: ['name', 'odcspec.name', 'project.name', 'mitra.name'],
+                    sortable: ['name', 'statusinv.name'],
+                    filterable: ['name'],
                     pagination: {chunk:10, dropdown: false}
                 }
             }

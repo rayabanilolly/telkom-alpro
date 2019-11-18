@@ -119,7 +119,7 @@
                                         <div class="row">
                                             <div class="col-md" v-for="(port, indexport) in panel.ports" :key="port.id">
                                                 <!-- <button @click="portPopover((indexpanel+1), (indexport+1), port.type, port.data)" class="btn btn-sm btn-primary pop" data-container="body" data-toggle="popover" data-placement="bottom"> {{ (indexport + 1) }} </button> -->
-                                                <button @click="showModalPanel()" class="btn btn-sm btn-primary pop" data-container="body" data-toggle="popover" data-placement="bottom"> {{ (indexport + 1) }} </button>
+                                                <button @click="showModalPanel(indexpanel, indexport, port.data)" :class="port.data !== null ? port.data.type === 'in' ? 'btn-warning' : 'btn-success' : ''" class="btn btn-sm btn-primary pop" data-container="body" data-toggle="popover" data-placement="bottom"> {{ (indexport + 1) }} </button>
                                             </div>
                                         </div>
                                     </div>
@@ -193,26 +193,78 @@
 
         <stack-modal
             :show="portPanelModal"
-            title="Tambah Data Splitter"
+            title="Data Port"
             @close="portPanelModal=false"
         >
             <form @submit.prevent="savePortPanel()">
                 <div class="form-group">
-                    <label for="splitter-name">Nama Splitter</label>
-                    <input type="text" class="form-control" v-model="splitter.name" id="splitter-name" placeholder="Nama Splitter">
-                </div>
-                <div class="form-group">
-                    <label for="splitter-port">Port</label>
-                    <select id="splitter-port" v-model="splitter.port" class="form-control">
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="8">8</option>
-                        <option value="16">16</option>
+                    <label for="port-type">Tipe Port</label>
+
+                    <select v-model="portDataForm.type" class="form-control form-control-sm">
+                        <option :value="'in'">In</option>
+                        <option :value="'out'">Out</option>
                     </select>
-                </div> 
+                </div>
+
+                <div v-if="portDataForm.type === 'out'" class="form-group">
+                    <label for="splitter-name">Kabel</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <select v-model="portDataForm.distribution" @change="getOdp()" class="form-control form-control-sm">
+                                <option :value="distribution.id" v-for="distribution in distributions">{{ distribution.name }}</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <input type="number" v-model="portDataForm.distribution_core" placeholder="Core Kabel" class="form-control form-control-sm">
+                        </div>    
+                    </div>
+                </div>                
+
+                <div v-if="portDataForm.type === 'in'" class="form-group">
+                    <label for="gpon">Gpon</label>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <select v-model="portDataForm.gpon" class="form-control form-control-sm">
+                                <option :value="gpon.id" v-for="gpon in gpons">{{ gpon.name }}</option>
+                            </select>  
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <input type="text" v-model="portDataForm.gpon_slot" placeholder="slot" class="form-control form-control-sm">
+                        </div>
+
+                        <div class="col-6 mt-3">
+                            <input type="text" v-model="portDataForm.gpon_port" placeholder="port" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="splitter-name">Nama Splitter</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <select v-model="portDataForm.splitter" class="form-control form-control-sm">
+                                <option :value="splitter.id" v-for="splitter in splitters">{{ splitter.name }}</option>
+                            </select>
+                        </div>
+
+                        <div v-if="portDataForm.type === 'out'" class="col-6">
+                            <input type="number" v-model="portDataForm.splitter_port" placeholder="Splitter Port" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="portDataForm.type === 'out'" class="form-group">
+                    <label for="odp-name">Nama ODP</label>
+                    <select class="form-control form-control-sm" v-model="portDataForm.odp">
+                        <option v-for="odp in odps" :value="odp.id">{{ odp.name }}</option>
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
+                    <button class="btn btn-danger btn-sm" type="button" v-if="portDataForm.id != null" @click="deletePort(portDataForm.id)">Hapus</button>
                 </div>
             </form>
         </stack-modal>
@@ -244,7 +296,13 @@
                 odcs: [],
                 odc: '',
                 odcname: '',
+                odps: [],
+                gpons: [],
                 panels: [],
+                portData: {},
+                portDataForm: {
+                    type: 'in'
+                },
                 distributions: [],
                 datadistributions: [],
                 columns: ['name', 'port', 'opsi'],
@@ -263,9 +321,55 @@
             }
         },
         methods: {
-            showModalPanel()
+            showModalPanel(panelindex, portindex, data)
             {
+                this.portDataForm = {}
+                this.portDataForm.type = 'in'
+
+                if (data !== null) {
+
+                    this.portDataForm.id                = data.id
+                    this.portDataForm.odc               = data.odc_id
+                    this.portDataForm.odp               = data.odp_id
+                    this.portDataForm.distribution      = data.distribution_id
+                    this.portDataForm.splitter          = data.splitter_id
+                    this.portDataForm.gpon              = data.gpon_id
+                    this.portDataForm.splitter_port     = data.splitter_port
+                    this.portDataForm.distribution_core = data.distribution_core
+                    this.portDataForm.gpon_slot         = data.gpon_slot
+                    this.portDataForm.gpon_port         = data.gpon_port
+                    this.portDataForm.type              = data.type 
+                    this.portDataForm.portIndex         = data.port
+                    this.portDataForm.panelIndex        = data.panel
+                }
+                else {
+
+                    this.portDataForm.portIndex = portindex
+                    this.portDataForm.panelIndex = panelindex
+                }
+                
                 this.portPanelModal = true
+            },
+            deletePort(id)
+            {
+
+                if (confirm('yakin mau dihapus?')) {
+
+                    this.loading = true
+
+                    axios.get(`/port-delete/${id}`)
+                    .then(
+                        response => {
+
+                            this.showOdc()
+                            this.portPanelModal = false
+                            this.loading = false
+                        }
+                    )
+                    .catch(
+                        (error) => console.log(error.message)
+                    );
+                }
             },
             allRegional() {
 				axios.get('/mancorecontentregional')
@@ -328,11 +432,10 @@
                         this.datadistributions = response.data.data.alldistributions;
 
                         this.getSplitter()
+                        this.getGpon()
 
                         this.loading = false;
                         this.done = true;
-
-                        console.log(response.data.data);
                     }
                 )
                 .catch(
@@ -346,17 +449,79 @@
                     content: function() {
                         var popover = 'empty';
 
-                        // if(type == 'in'){
-                        //     popover = 'in';
-                        // }
-                        // else {
-                        //     popover = 'out';
-                        // }
-
                         return $('#popover_port_'+ popover).html();
                     }
                 });
             },
+            savePortPanel()
+            {
+                this.loading = true
+                this.portDataForm.odc = this.odc
+
+                axios.post('odcsaveportdata', this.portDataForm)
+                .then(
+                    response => {
+
+                        this.showOdc()
+
+                        this.loading = false
+                        this.portPanelModal = false
+
+                        this.portDataForm = {}
+
+                        alert('Data berhasil ditambah')
+
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            getOdp()
+            {
+                this.loading = true
+
+                axios.get(`/odp-get/${this.odc}/${this.portDataForm.distribution}`)
+                .then(
+                    response => {
+
+                        this.odps = response.data.data
+                        this.loading = false
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            getGpon() {
+
+                this.loading = true
+
+                axios.get(`/gpon-get/${this.sto}`)
+                .then(
+                    response => {
+                        this.gpons = response.data.data
+                        this.loading = false
+                    }
+                )
+                .catch(
+                    (error) => console.log(error.message)
+                )
+            },
+            // getDistribusi(){
+            //     this.loading = true
+
+            //     axios.get(`/distribution-get/`)
+            //     .then(
+            //         response => {
+            //             this.distributions = response.data.data
+            //             this.loading = false
+            //         }
+            //     )
+            //     .catch(
+            //         (error) => console.log(error.message)
+            //     )
+            // },
             getSplitter()
             {
                 this.loading = true
@@ -427,6 +592,7 @@
         },
         mounted() {
             console.log('Component mounted.');
+
 			this.allRegional();
         }
     }
@@ -435,5 +601,9 @@
 <style>
     #splitter-btn {
         right: 1em;
+    }
+
+    .modal-footer {
+        display: none;
     }
 </style>
